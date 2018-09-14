@@ -5,7 +5,7 @@ public class Ouvrier : Unit
     public bool EnReparation { get; set; }
 	public bool EnExploitation { get; set; }
 
-    public Ouvrier(int PvM, int PaM, Position _pos, int _vitesse, bool _enDepl, Position _pointDepl, object _cible) : base(PvM, PaM, _pos, _vitesse, _enDepl, _pointDepl, _cible)
+    public Ouvrier(int PvM, int PaM, Position _pos, int _vitesse, bool _enDepl, Position _pointDepl, object _cible, int _attaque) : base(PvM, PaM, _pos, _vitesse, _enDepl, _pointDepl, _cible, _attaque)
     {
         PV = PvM; PvMax = PvM;
         Armure = PaM; ArmureMax = PaM;
@@ -17,13 +17,9 @@ public class Ouvrier : Unit
         Cible = _cible;
         PorteeMax = 0; // nombres Non significatifs... 
         PorteeMin = 0; //
+        Attaque = _attaque;
         EnConstruction = false;
         EnReparation = false;
-    }
-
-	public override void Attaquer(Construction _construction)
-    {
-		// ...
     }
 
 	public void Construire(string _batimentAConstruire)

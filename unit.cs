@@ -7,6 +7,7 @@ public abstract class Unit : Construction
     public object Cible { get; set; } // <- Batiment à attaquer, ressource naturelle à exploiter...
     public int PorteeMin { get; set; }
     public int PorteeMax { get; set; }
+    public int Attaque { get; set; }
 
     public Unit(int PvM, int PaM, Position _pos) : base(PvM, PaM, _pos)
     {
@@ -20,9 +21,10 @@ public abstract class Unit : Construction
         Cible = null;
         PorteeMax = 0; // nombres Non significatifs... 
         PorteeMin = 0; //
+        Attaque = 1;   //
     }
 
-    public Unit(int PvM, int PaM, Position _pos, int _vitesse, bool _enDepl, Position _pointDepl, object _cible) : base(PvM, PaM, _pos)
+    public Unit(int PvM, int PaM, Position _pos, int _vitesse, bool _enDepl, Position _pointDepl, object _cible, int _attaque) : base(PvM, PaM, _pos)
     {
         PV = PvM; PvMax = PvM;
         Armure = PaM; ArmureMax = PaM;
@@ -34,6 +36,7 @@ public abstract class Unit : Construction
         Cible = _cible;
         PorteeMax = 0; // nombres Non significatifs... 
         PorteeMin = 0; //
+        Attaque = _attaque;
     }
 
     public void Deplacer(Position _pos)
@@ -42,5 +45,9 @@ public abstract class Unit : Construction
         EnDeplacement = true;
     }
 
-    public abstract void Attaquer(Construction _construction);
+    public void Attaquer(ref Construction _construction)
+    {
+        _construction.SubirDegats(Attaque);
+    }
+
 }

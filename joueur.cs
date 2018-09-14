@@ -9,8 +9,9 @@ public class Joueur
 	public int Ress_mana { get; set; }
 	public int Ress_population { get; set; }
 	public bool Vaincu { get; set; } // <- Si le joueur a perdu OU déclarer forfait
+	public bool Vainqueur { get; set; } // <- Si le joueur a gagné (il est le seul restant...)
 
-	public Joueur(int _num, string _nom)
+    public Joueur(int _num, string _nom)
     {
         Num = _num;
         Ress_bois = 100;
