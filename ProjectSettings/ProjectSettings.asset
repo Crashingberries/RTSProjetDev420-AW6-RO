@@ -125,6 +125,7 @@ PlayerSettings:
   m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 0
   xboxOneEnable7thCore: 0
+  isWsaHolographicRemotingEnabled: 0
   vrSettings:
     cardboard:
       depthFormat: 0
@@ -648,9 +649,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: aed601b8-0e84-4730-aa48-69b8d6bd33e2
+  cloudProjectId: a9acba78-89d3-400f-bab3-32ab607f9b0e
   projectName: "D\xE9but projet"
-  organizationId: ferisoul
+  organizationId: unity_u890mkiwyw-obq
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
