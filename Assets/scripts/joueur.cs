@@ -8,16 +8,34 @@ public class Joueur
 	public int Ress_pierre { get; set; }
 	public int Ress_mana { get; set; }
 	public int Ress_population { get; set; }
-	public bool Vaincu { get; set; } // <- Si le joueur a perdu OU déclarer forfait
+	public bool Vaincu { get; set; } // <- Si le joueur a perdu OU déclaré forfait
+	public bool Vainqueur { get; set; } // <- Si le joueur a gagné (il est le seul restant...)
 
-	public Joueur(int _num, string _nom)
+    public Joueur()
+    {
+        Num = 0;
+        Nom = "";
+        Couleur = "blanc";
+        Ress_bois = 0;
+        Ress_or = 0;
+        Ress_pierre = 0;
+        Ress_mana = 0;
+        Ress_population = 0;
+        Vaincu = false;
+        Vainqueur = false;
+    }
+
+    public Joueur(int _num, string _nom)
     {
         Num = _num;
+        Nom = _nom;
         Ress_bois = 100;
         Ress_or = 50;
 		Ress_pierre: 150;
         Ress_mana = 0;
         Ress_population = 10;
+        Vaincu = false;
+        Vainqueur = false;
 		switch (Num)
         {
             case 1:
