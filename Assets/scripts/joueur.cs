@@ -121,7 +121,7 @@ namespace RTS
         //===========================================
         // Actions joueur
         //===========================================
-        public void Abondonner()
+        public void Abandonner()
         {
             Vaincu = true;
         }
