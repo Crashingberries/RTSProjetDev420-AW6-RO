@@ -20,7 +20,7 @@ public class RessourceNaturelle
 
     public void Retirer(int _montant)
     {
-        if (Epuise = false)
+        if (Epuise == false)
         {
             Quantite -= _montant;
             if (Quantite <= 0)

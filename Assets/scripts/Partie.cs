@@ -8,8 +8,10 @@ namespace RTS
 
         public Partie()
         {
-            /*Joueurs.Add(unJoueur = new Joueur());
-            Termine = false;*/
+            Joueur joueur1 = new Joueur();
+            Joueur joueur2 = new Joueur();
+            Joueurs = new Joueur[] { joueur1, joueur2 };
+            Termine = false;
         }
 
         public Partie(Joueur[] _joueurs)
