@@ -1,18 +1,21 @@
-public abstract class Batiment : Construction
+namespace RTS
 {
-    public Position PointRalliement { get; set; }
-    public int TempsConstruction { get; set; }
-
-    public Batiment() : base()
+    public abstract class Batiment : Construction
     {
-        PointRalliement = new Position();
-        TempsConstruction = 0;
-    }
+        public Position PointRalliement { get; set; }
+        public int TempsConstruction { get; set; }
 
-    public Batiment(int unPV, int uneArmure, Position unePosition, string unNom, int unCoutOr, int unCoutBois, int unTempsConstruction) :
-        base(unPV, uneArmure, unePosition, unNom, unCoutOr, unCoutBois)
-    {
-        TempsConstruction = unTempsConstruction;
-        PointRalliement = new Position();
+        public Batiment() : base()
+        {
+            PointRalliement = new Position();
+            TempsConstruction = 0;
+        }
+
+        public Batiment(int unPV, int uneArmure, Position unePosition, string unNom, int unCoutOr, int unCoutBois, int unTempsConstruction) :
+            base(unPV, uneArmure, unePosition, unNom, unCoutOr, unCoutBois)
+        {
+            TempsConstruction = unTempsConstruction;
+            PointRalliement = new Position();
+        }
     }
 }
