@@ -1,21 +1,21 @@
-//j'ai renommé la classe Unit en Unité
+//j'ai renommé la classe Unit en Unite
 public abstract class Unité : Construction
 {
-    public int VitesseDéplacement { get; set; }//renommé Vitesse en VitesseDéplacement
+    public int VitesseDeplacement { get; set; }//renomme Vitesse en VitesseDeplacement
     public bool EnDeplacement { get; set; }
     public bool EnAttaque { get; set; }
-    public Position PointDeplacement { get; set; } // <- La position ou l'unité est en train de se déplacer
+    public Position PointDeplacement { get; set; } // <- La position ou l'unite est en train de se deplacer
     public object Cible { get; set; } // <- Batiment à attaquer, ressource naturelle à exploiter...
     public int PorteeMin { get; set; }
     public int PorteeMax { get; set; }
-    public int PuissanceAttaque { get; set; }//renommé en PuissanceAttaque
-    //j'ai ajouté
+    public int PuissanceAttaque { get; set; }//renomme en PuissanceAttaque
+    //j'ai ajoute
     public int VitesseAttaque { get; set; }
 
-    //j'ai ajouté
+    //j'ai ajoute
     public Unité(): base()
     {
-        VitesseDéplacement = 0;
+        VitesseDeplacement = 0;
         PuissanceAttaque = 0;
         VitesseAttaque = 0;
         PorteeMin = 0;
@@ -26,22 +26,22 @@ public abstract class Unité : Construction
         EnAttaque = false;
     }
 
-    //j'ai ajouté
-    public Unité(int unPv, int uneArmure, Position unePosition, string unNom, int unCoutOr, int unCoutBois, 
-        int uneVitesseDeplacement, int unePuissanceAttaque, int unePortéeMin, int unePortéeMax, int unePuissanceAttaque, int uneVitesseAttaque) : 
+    //j'ai ajoute
+    public Unite(int unPv, int uneArmure, Position unePosition, string unNom, int unCoutOr, int unCoutBois, 
+        int uneVitesseDeplacement, int unePuissanceAttaque, int unePorteeMin, int unePorteeMax, int unePuissanceAttaque, int uneVitesseAttaque) : 
         base(unPv, uneArmure, unePosition, unNom, unCoutOr, unCoutBois)
     {
-        VitesseDéplacement = uneVitesseDeplacement;
+        VitesseDeplacement = uneVitesseDeplacement;
         EnDeplacement = false;
         EnAttaque = false;
         PointDeplacement = null;
-        PorteeMin = unePortéeMin;
-        PortéeMax = unePortéeMax;
+        PorteeMin = unePorteeMin;
+        PortéeMax = unePorteeMax;
         PuissanceAttaque = unePuissanceAttaque;
         VitesseAttaque = uneVitesseAttaque;
     }
 
-    public Unité(int PvM, int PaM, Position _pos) : base(PvM, PaM, _pos)
+    public Unite(int PvM, int PaM, Position _pos) : base(PvM, PaM, _pos)
     {
         PV = PvM; PvMax = PvM;
         Armure = PaM; ArmureMax = PaM;
@@ -56,7 +56,7 @@ public abstract class Unité : Construction
         Attaque = 1;   //
     }
 
-    public Unité(int PvM, int PaM, Position _pos, int _vitesse, bool _enDepl, Position _pointDepl, object _cible, int _attaque) : base(PvM, PaM, _pos)
+    public Unite(int PvM, int PaM, Position _pos, int _vitesse, bool _enDepl, Position _pointDepl, object _cible, int _attaque) : base(PvM, PaM, _pos)
     {
         PV = PvM; PvMax = PvM;
         Armure = PaM; ArmureMax = PaM;

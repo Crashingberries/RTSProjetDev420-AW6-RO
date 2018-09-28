@@ -8,19 +8,19 @@ public class Construction : MonoBehaviour {
     public int PvMax { get; set; }
     public int ArmureMax { get; set; }
     public Position Pos { get; set; }
-    //j'ai ajouté
+    //j'ai ajoute
     public string Nom { get; set; }
     public int CoûtOr { get; set; }
     public int CoûtBois { get; set; }
 
     public Construction()
     {
-        //ajouté les 3 paramètres
+        //ajouté les 3 parametres
         PV = 0; Armure = 0; PvMax = 0; ArmureMax = 0; Pos = new Position(); Nom = ""; CoutOr = 0; CoutBois = 0;
 
     }
 
-    //j'ai ajouté
+    //j'ai ajoute
     public Construction(int unPV, int uneArmure, Position unePosition, string unNom, int unCoutOr, int unCoutBois)
     {
         PV = unPV; PvMax = PV; Armure = uneArmure; ArmureMax = Armure; Pos = unePosition; Nom = unNom; CoutOr = unCoutOr; CoutBois = unCoutBois;
@@ -57,10 +57,10 @@ public class Construction : MonoBehaviour {
     }
 
 
-    //j'ai ajouté
+    //j'ai ajoute
     public void Mourir()
     {
-        //à définir dans Unity
+        //à definir dans Unity
     }
 
     public void SubirReperations(int _reparations)

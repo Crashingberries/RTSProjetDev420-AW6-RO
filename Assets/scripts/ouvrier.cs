@@ -1,18 +1,15 @@
-<<<<<<< HEAD
-public class Ouvrier : Unit
-=======
-public class Ouvrier : Unité
->>>>>>> Julien
+public class Ouvrier : Unite
 {
     public static Batiment[] BatimentsAConstruire;
 	public bool EnConstruction { get; set; }
     public bool EnReparation { get; set; }
 	public bool EnExploitation { get; set; }
 
-<<<<<<< HEAD
     public Ouvrier(int PvM, int PaM, Position _pos, int _vitesse, bool _enDepl, Position _pointDepl, object _cible) : base(PvM, PaM, _pos, _vitesse, _enDepl, _pointDepl, _cible)
-=======
-    //j'ai ajouté
+    {
+
+    }
+    //j'ai ajoute
     public Ouvrier() : base()
     {
         EnConstruction = false;
@@ -20,8 +17,8 @@ public class Ouvrier : Unité
         EnExploitation = false;
     }
 
-    //j'ai ajouté
-    public Ouvrier(int unPv, int uneArmure, Position unePosition, string unNom, int unCoutOr, int unCoutBois, int uneVitesseDeplacement, int unePuissanceAttaque, int unePortéeMin, int unePortéeMax, int unePuissanceAttaque, int uneVitesseAttaque) : 
+    //j'ai ajoute
+    public Ouvrier(int unPv, int uneArmure, Position unePosition, string unNom, int unCoutOr, int unCoutBois, int uneVitesseDeplacement, int unePuissanceAttaque, int unePorteeMin, int unePorteeMax, int unePuissanceAttaque, int uneVitesseAttaque) : 
         base(unPv, uneArmure, unePosition, unNom, unCoutOr, unCoutBois, uneVitesseDeplacement, unePuissanceAttaque, unePortéeMin, unePortéeMax, unePuissanceAttaque, uneVitesseAttaque)
     {
         EnConstruction = false;
@@ -30,7 +27,6 @@ public class Ouvrier : Unité
     }
 
     public Ouvrier(int PvM, int PaM, Position _pos, int _vitesse, bool _enDepl, Position _pointDepl, object _cible, int _attaque) : base(PvM, PaM, _pos, _vitesse, _enDepl, _pointDepl, _cible, _attaque)
->>>>>>> Julien
     {
         PV = PvM; PvMax = PvM;
         Armure = PaM; ArmureMax = PaM;
@@ -41,23 +37,17 @@ public class Ouvrier : Unité
         PointDeplacement = _pointDepl;
         Cible = _cible;
         PorteeMax = 0; // nombres Non significatifs... 
-        PorteeMin = 0; //
-<<<<<<< HEAD
-=======
+        PorteeMin = 0;
         Attaque = _attaque;
->>>>>>> Julien
         EnConstruction = false;
         EnReparation = false;
     }
 
-<<<<<<< HEAD
 	public override void Attaquer(Construction _construction)
     {
 		// ...
     }
 
-=======
->>>>>>> Julien
 	public void Construire(string _batimentAConstruire)
     {
         new Batiment();
@@ -72,13 +62,10 @@ public class Ouvrier : Unité
     {
         // ...
     }
-<<<<<<< HEAD
-=======
 
-    //j'ai ajouté
+    //j'ai ajoute
     public void Améliorer(Batiment unBatiment)
     {
         //à définir dans Unity
     }
->>>>>>> Julien
 }

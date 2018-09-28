@@ -8,8 +8,8 @@ public class Joueur
 	public int Ress_pierre { get; set; }
 	public int Ress_mana { get; set; }
 	public int Ress_population { get; set; }
-	public bool Vaincu { get; set; } // <- Si le joueur a perdu OU déclaré forfait
-	public bool Vainqueur { get; set; } // <- Si le joueur a gagné (il est le seul restant...)
+	public bool Vaincu { get; set; } // <- Si le joueur a perdu OU declare forfait
+	public bool Vainqueur { get; set; } // <- Si le joueur a gagne (il est le seul restant...)
 
     public Joueur()
     {
@@ -59,7 +59,7 @@ public class Joueur
 
 
 	//===========================================
-	// Méthodes d'ajout de ressources
+	// Methodes d'ajout de ressources
 	//===========================================
 	public void AjouterBois(int nbr)
     {
@@ -84,7 +84,7 @@ public class Joueur
 
 
     //===========================================
-    // Méthodes de retrait de ressources
+    // Methodes de retrait de ressources
     //===========================================
     public void RetirerBois(int nbr)
     {

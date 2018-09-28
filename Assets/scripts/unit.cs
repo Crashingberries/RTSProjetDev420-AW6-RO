@@ -3,7 +3,7 @@ public abstract class Unit : Construction
     public int Vitesse { get; set; }
     public bool EnDeplacement { get; set; }
     public bool EnAttaque { get; set; }
-    public Position PointDeplacement { get; set; } // <- La position ou l'unité est en train de se déplacer
+    public Position PointDeplacement { get; set; } // <- La position ou l'unite est en train de se deplacer
     public object Cible { get; set; } // <- Batiment à attaquer, ressource naturelle à exploiter...
     public int PorteeMin { get; set; }
     public int PorteeMax { get; set; }
