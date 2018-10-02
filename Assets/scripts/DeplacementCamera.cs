@@ -5,7 +5,8 @@ using UnityEngine;
 public class DeplacementCamera : MonoBehaviour {
     float vitesse = 200f;
     float limite = 10f;
-
+    float minX =42f , maxX = 458f;
+    float minZ =-52f, maxZ =348;
 
     // Use this for initialization
     void Start () {        
@@ -32,7 +33,8 @@ public class DeplacementCamera : MonoBehaviour {
         {
             position.x += vitesse * Time.deltaTime;
         }
-
+        position.z =Mathf.Clamp(position.z, minZ, maxZ);
+        position.x = Mathf.Clamp(position.x, minX, maxX);
 
         transform.position = position;
 		
