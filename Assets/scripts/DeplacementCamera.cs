@@ -1,12 +1,13 @@
-﻿using System.Collections;
+﻿//Alex Thibeault
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DeplacementCamera : MonoBehaviour {
-    float vitesse = 200f;
+    public float vitesse = 200f;
     float limite = 10f;
-    float minX =42f , maxX = 458f;
-    float minZ =-52f, maxZ =348;
+    public float minX =105f , maxX = 400f;
+    public float minZ =-52f, maxZ =348;
 
     // Use this for initialization
     void Start () {        
