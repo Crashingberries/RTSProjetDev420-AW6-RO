@@ -6,10 +6,13 @@ namespace RTS
 {
     public class RectangleSelection: MonoBehaviour
     {
+        //ajoute toutes les unités de la scène
         public GameObject[] toutesUnites;
 
+        //le rectangle qui va être créé
         public RectTransform rectangleSelectionTrans;
 
+        //pour le debug
         public Transform sphere1;
         public Transform sphere2;
         public Transform sphere3;
@@ -36,6 +39,7 @@ namespace RTS
         
         void Start()
         {
+            //désactive le rectangle
             rectangleSelectionTrans.gameObject.SetActive(false);
         }
 
@@ -107,7 +111,7 @@ namespace RTS
             {
                 for (int i = 0; i < uniteSelectionnees.Count; i++)
                 {
-                    uniteSelectionnees[i].GetComponent<SkinnedMeshRenderer>().material = matNormal;
+                    uniteSelectionnees[i].GetComponent<MeshRenderer>().material = matNormal;
                 }
 
                 uniteSelectionnees.Clear();
@@ -148,13 +152,12 @@ namespace RTS
                         }
                         else
                         {
-                            uniteActuelle.GetComponent<SkinnedMeshRenderer>().material = matNormal;
+                            uniteActuelle.GetComponent<MeshRenderer>().material = matNormal;
                         }
                     }
                 }
             }
         }
-
 
         void HighlightUnite()
         {
@@ -257,13 +260,17 @@ namespace RTS
 
             hautGauche = new Vector3(milieu.x - sizeX / 2f, milieu.y + sizeY / 2f, 0f);
             hautDroit = new Vector3(milieu.x + sizeX / 2f, milieu.y + sizeY / 2f, 0f);
-            hautGauche = new Vector3(milieu.x - sizeX / 2f, milieu.y - sizeY / 2f, 0f);
-            hautGauche = new Vector3(milieu.x + sizeX / 2f, milieu.y - sizeY / 2f, 0f);
+            basGauche = new Vector3(milieu.x - sizeX / 2f, milieu.y - sizeY / 2f, 0f);
+            basDroit = new Vector3(milieu.x + sizeX / 2f, milieu.y - sizeY / 2f, 0f);
 
             RaycastHit hit;
             int i = 0;
+            bool a = false;
+            bool b = false;
+            bool c = false;
+            bool d = false;
 
-            if(Physics.Raycast(Camera.main.ScreenPointToRay(hautGauche), out hit, 200f, 1 << 8))
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(hautGauche), out hit, 200f, 1 << 8))
             {
                 hautGauche = hit.point;
                 i++;
@@ -285,16 +292,18 @@ namespace RTS
             {
                 basDroit = hit.point;
                 i++;
+
             }
 
             aCreeRectangle = false;
-
             if (i == 4)
             {
                 sphere1.position = hautGauche;
                 sphere2.position = hautDroit;
                 sphere3.position = basGauche;
                 sphere4.position = basDroit;
+
+                aCreeRectangle = true;
             }
         }
     }
