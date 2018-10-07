@@ -5,15 +5,18 @@ using UnityEngine;
 public class ConstructionPossible : MonoBehaviour {
 
     public List<Collider> colliders = new List<Collider>();
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private bool estSelectionne;
+    // Use this for initialization
+    void Start() {
+
+    }
+    private void OnGUI()
+    {
+        if (estSelectionne)
+        {
+            GUI.Button(new Rect(100, 200, 100, 30), name);
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Batiment")
@@ -27,5 +30,9 @@ public class ConstructionPossible : MonoBehaviour {
         {
             colliders.Remove(other);
         }
+    }
+    public void definirSelection(bool s)
+    {
+        estSelectionne = s;
     }
 }
