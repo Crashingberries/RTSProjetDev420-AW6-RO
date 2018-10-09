@@ -27,7 +27,7 @@ namespace RTS
 
         GameObject highlightCetteUnite;
 
-        float delais = 0.3f;
+        float delais = 0.15f;
         float tempsDeClick = 0f;
 
         Vector3 rectanglePositionDepart;
@@ -45,6 +45,7 @@ namespace RTS
 
         void Update()
         {
+            toutesUnites= GameObject.FindGameObjectsWithTag("Friendly");
             SelectionnerUnites();
 
             HighlightUnite();
@@ -139,11 +140,11 @@ namespace RTS
                 rectanglePositionFin = Input.mousePosition;
 
                 AfficherRectangle();
-
                 if (aCreeRectangle)
                 {
                     for (int i = 0; i < toutesUnites.Length; i++)
                     {
+                        
                         GameObject uniteActuelle = toutesUnites[i];
 
                         if (EstDansPolygone(uniteActuelle.transform.position))
@@ -298,13 +299,14 @@ namespace RTS
             aCreeRectangle = false;
             if (i == 4)
             {
-                sphere1.position = hautGauche;
+                /*sphere1.position = hautGauche;
                 sphere2.position = hautDroit;
                 sphere3.position = basGauche;
-                sphere4.position = basDroit;
+                sphere4.position = basDroit;*/
 
                 aCreeRectangle = true;
             }
+            
         }
     }
 }
