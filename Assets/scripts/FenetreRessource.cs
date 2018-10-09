@@ -17,5 +17,7 @@ public class FenetreRessource : MonoBehaviour {
 	private void UpdateRessourceText()
     {
         transform.Find("MontantOr").GetComponent<Text>().text = "Or: " + RessourceDuJeu.GetMontantOr();
+        transform.Find("MontantBois").GetComponent<Text>().text = "Bois: " + RessourceDuJeu.GetMontantBois();
+        transform.Find("MontantPop").GetComponent<Text>().text = "Population: " + RessourceDuJeu.GetMontantPop()+"/200";
     }
 }

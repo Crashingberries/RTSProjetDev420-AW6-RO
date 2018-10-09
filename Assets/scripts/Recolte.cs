@@ -11,31 +11,46 @@ public class Recolte : MonoBehaviour {
     private float vitesse = 10;
 
     private int compteur;
-    Timer ControleAugmentation = new Timer();
+
+    Animator anim;
+
+    Rigidbody rbody;
+    
+
 
     private Vector3 positionCible;
+    
     private bool enMouvement;
-    private bool enRecolte = false;
+    private bool enRecolte;
 
-   
+    [SerializeField] private float nextActionTime = 5f;
+    public float period = 2f;
 
+  
     // Use this for initialization
     void Start()
     {
+        anim = GetComponent<Animator>();
         positionCible = transform.position;
-        enMouvement = false;
+        rbody = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        enMouvement = false;
+        enRecolte = false;
 
         SetPositionCible();
 
 
         if (enMouvement)
         {
+            anim.SetBool("Run", true);
             AllezARecolte();
+            
+            
         }
     }
 
@@ -46,45 +61,64 @@ public class Recolte : MonoBehaviour {
 
 
         enMouvement = true;
+
+        
     }
 
     void AllezARecolte()
     {
         transform.LookAt(positionCible);
         transform.position = Vector3.MoveTowards(transform.position, positionCible, vitesse * Time.deltaTime);
-
+       // rbody.AddForce(positionCible);
         if (transform.position == positionCible)
         {
-            enMouvement = false;
             enRecolte = true;
-            ActionRecolte(null,null);
+
+            enMouvement = false;
+            anim.SetBool("Run", false);
+          
+
+
+
+            if (Time.time > nextActionTime)
+            {
+                
+                nextActionTime = Time.time + period;
+                
+               
+                ActionRecolte();
+              
+
+
+            }
+            
         }
 
         Debug.DrawLine(transform.position, positionCible, Color.red);
     }
-    private void InitializeTimer()
+   /* private void InitializeTimer()
     {
         compteur = 0;
         ControleAugmentation.Interval = 2000;
         ControleAugmentation.Enabled = true;
         ControleAugmentation.Elapsed += new ElapsedEventHandler(ActionRecolte);
-    }
+    }*/
 
-    public void ActionRecolte(object sender, ElapsedEventArgs e)
+    public void ActionRecolte()
     {
         if (compteur >= 20)
-        {
-            ControleAugmentation.Enabled = false;
+        {  
             enRecolte = false;
-           
+            anim.SetBool("Attack", false);
+            Destroy(GameObject.FindGameObjectWithTag("MineOr"));
         }
         else
         {
-                               
+            anim.SetBool("Attack", true);
             RessourceDuJeu.IncrementerOr();
             compteur++;
-            
         }
+     
     }
 
         
