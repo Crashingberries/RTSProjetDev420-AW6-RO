@@ -4,6 +4,7 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+Library/*
 
 Assets/3DForge*
 Assets/Baker House*
