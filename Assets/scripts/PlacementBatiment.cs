@@ -21,10 +21,11 @@ public class PlacementBatiment : MonoBehaviour {
         Vector3 p = cam.ScreenToWorldPoint(m);
         if (batimentActuel != null && !EstPlace)
         {
-            batimentActuel.position = new Vector3(p.x, p.y, p.z);
+            batimentActuel.position = new Vector3(p.x,p.y,p.z);
             if (Input.GetMouseButtonDown(0)) {
                 if (EstLegal())
                 {
+                    //batimentActuel.position = new Vector3(p.x, 0, p.z);
                     EstPlace = true;
                 }
             }

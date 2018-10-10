@@ -12,11 +12,12 @@ namespace RTS
         //le rectangle qui va être créé
         public RectTransform rectangleSelectionTrans;
 
-        //pour le debug
+        /*pour le debug
         public Transform sphere1;
         public Transform sphere2;
         public Transform sphere3;
         public Transform sphere4;
+        */
 
         public Material matNormal;
         public Material matHighlight;
@@ -47,7 +48,6 @@ namespace RTS
         {
             toutesUnites= GameObject.FindGameObjectsWithTag("Friendly");
             SelectionnerUnites();
-
             HighlightUnite();
         }
 
@@ -86,11 +86,10 @@ namespace RTS
                     for (int i = 0; i < toutesUnites.Length; i++)
                     {
                         GameObject uniteActuelle = toutesUnites[i];
-
                         if (EstDansPolygone(uniteActuelle.transform.position))
                         {
                             uniteActuelle.GetComponent<MeshRenderer>().material = matSelection;
-
+                            print(uniteActuelle.name);
                             uniteSelectionnees.Add(uniteActuelle);
 ;                       }
                         else

@@ -4,11 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
   - Batiment
-=======
   - Friendly
->>>>>>> origin/JVB
   layers:
   - Default
   - TransparentFX
@@ -18,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
+  - Terrain
   - Batiment
   - 
   - 
