@@ -12,13 +12,23 @@ Assets/Fantasy Defensive Structures*
 Assets/Fortress Gate_Free*
 Assets/FrogamesFantasyHousePack*
 Assets/Gaia*
+Assets/GaiaExports*
+Assets/GaiaSessions*
 Assets/KriptoFX*
 Assets/LowPoly Environment Pack*
 Assets/Medieval fantasy house*
 Assets/Medieval house*
 Assets/Tower*
 Assets/WatchTower*
+Assets/Toon_RTS*
+Assets/Toon_RTS_demo*
+Assets/Low_Poly_ResourceRocks*
+Assets/WesternKingdoms*
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> JVB
 # Visual Studio cache directory
 .vs/
 
@@ -75,3 +85,5 @@ sysinfo.txt
 ._*
 .Spotlight-V100
 Packages/manifest.json
+Assets/ASSETS-20180928T161612Z-002.zip.meta
+Assets/ASSETS-20180928T161612Z-001.zip.meta
