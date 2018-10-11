@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Batiment
   - Friendly
+  - MineOr
+  - Ennemi
   layers:
   - Default
   - TransparentFX

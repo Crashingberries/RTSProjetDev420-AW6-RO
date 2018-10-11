@@ -233,13 +233,14 @@
     <Compile Include="Assets\scfr.cs" />
     <Compile Include="Assets\scripts\Archer.cs" />
     <Compile Include="Assets\scripts\Atelier.cs" />
+    <Compile Include="Assets\scripts\AttaqueManager.cs" />
     <Compile Include="Assets\scripts\Base.cs" />
     <Compile Include="Assets\scripts\Batiment.cs" />
-    <Compile Include="Assets\scripts\CameraTemp.cs" />
     <Compile Include="Assets\scripts\Caserne.cs" />
     <Compile Include="Assets\scripts\Catapulte.cs" />
     <Compile Include="Assets\scripts\Cavalier.cs" />
     <Compile Include="Assets\scripts\Construction.cs" />
+    <Compile Include="Assets\scripts\ConstructionManager.cs" />
     <Compile Include="Assets\scripts\ConstructionPossible.cs" />
     <Compile Include="Assets\scripts\ControleurJeu.cs" />
     <Compile Include="Assets\scripts\CreationBatiment.cs" />
@@ -249,6 +250,7 @@
     <Compile Include="Assets\scripts\Forge.cs" />
     <Compile Include="Assets\scripts\GestionnaireBatiment.cs" />
     <Compile Include="Assets\scripts\Habitation.cs" />
+    <Compile Include="Assets\scripts\HealthManager.cs" />
     <Compile Include="Assets\scripts\joueur.cs" />
     <Compile Include="Assets\scripts\Mage.cs" />
     <Compile Include="Assets\scripts\ouvrier.cs" />

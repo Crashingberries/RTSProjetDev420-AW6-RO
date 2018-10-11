@@ -15,87 +15,61 @@ public class Recolte : MonoBehaviour {
     Animator anim;
 
     Rigidbody rbody;
-    
+
 
 
     private Vector3 positionCible;
-    
+
     private bool enMouvement;
     private bool enRecolte;
 
-    [SerializeField] private float nextActionTime = 5f;
+    [SerializeField] private float nextActionTime = 0f;
     public float period = 2f;
 
-  
+
     // Use this for initialization
     void Start()
     {
         anim = GetComponent<Animator>();
         positionCible = transform.position;
         rbody = GetComponent<Rigidbody>();
-        
+        positionCible = GameObject.FindGameObjectWithTag("MineOr").transform.position;
+        print(positionCible);
     }
-
-    // Update is called once per frame
     void Update()
     {
-        enMouvement = false;
-        enRecolte = false;
-
-        SetPositionCible();
-
-
-        if (enMouvement)
+        if (enRecolte)
         {
-            anim.SetBool("Run", true);
-            AllezARecolte();
-            
-            
+            if (Time.time > nextActionTime)
+            {
+                print("incrémentation");
+                nextActionTime = Time.time + period;
+                ActionRecolte();
+            }
         }
     }
 
-    void SetPositionCible()
+    private void OnCollisionEnter(Collision collision)
     {
-
-        positionCible = GameObject.FindGameObjectWithTag("MineOr").transform.position;
-
-
-        enMouvement = true;
-
+        
+        if (collision.gameObject.name == "MineOr")
+        {
+            anim.SetBool("Attaque", true);
+            enRecolte = true;
+            print("dans le trigger");
+        }
         
     }
 
-    void AllezARecolte()
+    private void OnCollisionExit(Collision collision)
     {
-        transform.LookAt(positionCible);
-        transform.position = Vector3.MoveTowards(transform.position, positionCible, vitesse * Time.deltaTime);
-       // rbody.AddForce(positionCible);
-        if (transform.position == positionCible)
-        {
-            enRecolte = true;
 
-            enMouvement = false;
-            anim.SetBool("Run", false);
-          
+        anim.SetBool("Attaque",false);
+        print("sorti du trigger");
+        enRecolte = false;
 
+    }    
 
-
-            if (Time.time > nextActionTime)
-            {
-                
-                nextActionTime = Time.time + period;
-                
-               
-                ActionRecolte();
-              
-
-
-            }
-            
-        }
-
-        Debug.DrawLine(transform.position, positionCible, Color.red);
-    }
    /* private void InitializeTimer()
     {
         compteur = 0;
@@ -106,19 +80,15 @@ public class Recolte : MonoBehaviour {
 
     public void ActionRecolte()
     {
-        if (compteur >= 20)
+        RessourceDuJeu.IncrementerOr();
+        compteur++;
+        if (compteur >= 5)
         {  
             enRecolte = false;
-            anim.SetBool("Attack", false);
+            anim.SetBool("Attaque", false);
             Destroy(GameObject.FindGameObjectWithTag("MineOr"));
-        }
-        else
-        {
-            anim.SetBool("Attack", true);
-            RessourceDuJeu.IncrementerOr();
-            compteur++;
-        }
-     
+
+        }   
     }
 
         
