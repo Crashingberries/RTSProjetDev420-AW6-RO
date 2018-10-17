@@ -31,10 +31,10 @@ public class ConstructionManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-       /* for(int i=0; i < all_textBarresVie.Length; i++)
+        for(int i=0; i < all_textBarresVie.Length; i++)
         {
             all_textBarresVie[i].text = all_barresVie[i].PvBar.value + "/" + all_barresVie[i].PvBar.maxValue + " PV";
-        }*/
+        }
 
 
         //print("Destruit");
