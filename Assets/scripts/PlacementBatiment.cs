@@ -27,6 +27,7 @@ public class PlacementBatiment : MonoBehaviour {
                 {
                     //batimentActuel.position = new Vector3(p.x, 0, p.z);
                     EstPlace = true;
+                    batimentActuel.GetComponent<Collider>().isTrigger = false;
                 }
             }
         }
@@ -57,6 +58,7 @@ public class PlacementBatiment : MonoBehaviour {
     {
         EstPlace = false;
         batimentActuel = ((GameObject)Instantiate(b)).transform;
+        batimentActuel.GetComponent<Collider>().isTrigger = true;
     }
     
 }
