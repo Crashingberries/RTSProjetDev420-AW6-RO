@@ -19,14 +19,14 @@ public class ConstructionPossible : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Batiment")
+        if (other.tag == "Batiment"|| other.tag == "MineOr"|| other.tag == "Friendly"|| other.tag == "Ennemi")
         {
             colliders.Add(other);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Batiment")
+        if (other.tag == "Batiment"|| other.tag == "MineOr"|| other.tag == "Friendly"|| other.tag == "Ennemi")
         {
             colliders.Remove(other);
         }
