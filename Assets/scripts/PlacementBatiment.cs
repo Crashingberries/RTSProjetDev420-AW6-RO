@@ -24,7 +24,6 @@ public class PlacementBatiment : MonoBehaviour {
             
             vecteurDefini.Set(hit.point.x, hit.collider.transform.position.y, hit.point.z);
             batimentActuel.transform.position = vecteurDefini;
-            Debug.Log(vecteurDefini);
         }
         if (Input.GetMouseButtonDown(0)) {
             if (EstLegal())
@@ -40,6 +39,7 @@ public class PlacementBatiment : MonoBehaviour {
         if (constructionPossible.colliders.Count > 0)
         {
             print("pas legal");
+            
             return false;
         }
         print("legal");

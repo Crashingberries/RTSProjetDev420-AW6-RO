@@ -6,9 +6,10 @@ public class ConstructionPossible : MonoBehaviour {
 
     public List<Collider> colliders = new List<Collider>();
     private bool estSelectionne;
+    Material colorquad;
     // Use this for initialization
     void Start() {
-
+        
     }
     private void OnGUI()
     {
@@ -19,15 +20,19 @@ public class ConstructionPossible : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Batiment")
+        GameObject quad = GameObject.Find("Quad");
+        if (other.tag != "Terrain")
         {
+            quad.GetComponent<Material>();
             colliders.Add(other);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Batiment")
+        if (other.tag != "Terrain")
         {
+            Material couleurQuad = GetComponentInChildren<Material>();
+            couleurQuad.color = Color.red;
             colliders.Remove(other);
         }
     }
