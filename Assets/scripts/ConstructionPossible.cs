@@ -6,10 +6,16 @@ public class ConstructionPossible : MonoBehaviour {
 
     public List<Collider> colliders = new List<Collider>();
     private bool estSelectionne;
-    Material colorquad;
+    public GameObject quad;
+    Renderer rendTest;
+    public Material shader1;
+    public Material shader2;
     // Use this for initialization
     void Start() {
-        
+ 
+        quad = transform.Find("Quad").gameObject;
+        rendTest = quad.GetComponent<Renderer>();
+        rendTest.enabled = true;       
     }
     private void OnGUI()
     {
@@ -20,20 +26,22 @@ public class ConstructionPossible : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
-        GameObject quad = GameObject.Find("Quad");
-        if (other.tag != "Terrain")
+
+        if (other.tag == "Batiment")
         {
-            quad.GetComponent<Material>();
+            rendTest.sharedMaterial = shader2;
             colliders.Add(other);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag != "Terrain")
+        if (other.tag == "Batiment")
         {
-            Material couleurQuad = GetComponentInChildren<Material>();
-            couleurQuad.color = Color.red;
             colliders.Remove(other);
+            if (colliders.Count < 1)
+            {
+                rendTest.sharedMaterial = shader1;
+            }
         }
     }
     public void definirSelection(bool s)

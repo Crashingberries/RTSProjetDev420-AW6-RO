@@ -29,6 +29,8 @@ public class PlacementBatiment : MonoBehaviour {
             if (EstLegal())
             {
                 EstPlace = true;
+                GameObject test= batimentActuel.transform.Find("Quad").gameObject;
+                test.SetActive(false);
             }
         }
     }   
