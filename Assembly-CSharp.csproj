@@ -288,6 +288,7 @@
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\PostEffects\PC\Bloom\Resources\Bloom_RFX4.cginc" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\Decal\RFX4_DecalDistortMaskMobile.shader" />
     <None Include="Assets\Gaia\Scripts\JsonSerialiser\_ReadMe.txt" />
+    <None Include="Assets\MagicBuildingPack\Readme.txt" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\Decal\RFX4_DepthMaskProjector.shader" />
     <None Include="Assets\Baker House\Readme.txt" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\Portal\RFX4_PortalMask.shader" />
@@ -313,13 +314,16 @@
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\Portal\RFX4_PortalStandard.shader" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\Water\RFX4_WaterSplashMobile.shader" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\Decal\RFX4_ProjectorBlendedMobile.shader" />
+    <None Include="Assets\MagicBuildingPack\Data\Shaders\Transparent\VertexTransparent.shader" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\RFX4_ShaderExtension.cginc" />
     <None Include="Assets\Gaia\Documentation\Release Notes v1_6_0.txt" />
     <None Include="Assets\Fortress Gate_Free\ReadMe.txt" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\Water\RFX4_WaterTurbulence.shader" />
     <None Include="Assets\Gaia\Documentation\Release Notes v1_7_0.txt" />
+    <None Include="Assets\MagicBuildingPack\Data\Shaders\Diffuse\VertexDiffuseUnlit.shader" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\RFX4_Particle.shader" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\Decal\RFX4_DecalDistortMask.shader" />
+    <None Include="Assets\MagicBuildingPack\Data\Shaders\Diffuse\VertexDiffuse.shader" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\Water\RFX4_WaterSplashTexMobile.shader" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\Portal\NoStencilTransperentDiffuse.shader" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\Decal\RFX4_DecalMaskMobile.shader" />

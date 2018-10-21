@@ -29,8 +29,13 @@ public class PlacementBatiment : MonoBehaviour {
             if (EstLegal())
             {
                 EstPlace = true;
-                GameObject test= batimentActuel.transform.Find("Quad").gameObject;
-                test.SetActive(false);
+                GameObject test = batimentActuel.transform.Find("Quad").gameObject;
+                if (test.activeSelf)
+                {
+                    test.SetActive(false);
+                    StartCoroutine(EnConstruction(batimentActuel, vecteurDefini));
+                }
+                
             }
         }
     }   
@@ -53,5 +58,14 @@ public class PlacementBatiment : MonoBehaviour {
         EstPlace = false;
         batimentActuel = ((GameObject)Instantiate(b)).transform;
     }
-    
+
+    IEnumerator EnConstruction(Transform construction,Vector3 placement)
+    {
+        for (int i = 10; i >= 0; i--)
+        {
+            print(i);
+            construction.transform.position = new Vector3(placement.x, placement.y-i, placement.z);
+            yield return new WaitForSeconds(1.5f);
+        }
+    }
 }
