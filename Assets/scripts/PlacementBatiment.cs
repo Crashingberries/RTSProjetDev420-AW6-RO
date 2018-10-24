@@ -33,6 +33,7 @@ public class PlacementBatiment : MonoBehaviour {
                 if (test.activeSelf)
                 {
                     test.SetActive(false);
+                    batimentActuel.GetComponent<Collider>().isTrigger = false;
                     StartCoroutine(EnConstruction(batimentActuel, vecteurDefini));
                 }
                 
@@ -57,6 +58,7 @@ public class PlacementBatiment : MonoBehaviour {
     {
         EstPlace = false;
         batimentActuel = ((GameObject)Instantiate(b)).transform;
+        batimentActuel.GetComponent<Collider>().isTrigger = true;
     }
 
     IEnumerator EnConstruction(Transform construction,Vector3 placement)
