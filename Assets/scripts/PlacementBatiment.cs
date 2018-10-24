@@ -63,11 +63,11 @@ public class PlacementBatiment : MonoBehaviour {
 
     IEnumerator EnConstruction(Transform construction,Vector3 placement)
     {
-        for (int i = 10; i >= 0; i--)
+        for (float i = 10; i >= 0; i=i-0.3f)
         {
             print(i);
             construction.transform.position = new Vector3(placement.x, placement.y-i, placement.z);
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(0.2f);
         }
     }
 }
