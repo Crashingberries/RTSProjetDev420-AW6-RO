@@ -33,6 +33,8 @@ public class PlacementBatiment : MonoBehaviour {
                 if (test.activeSelf)
                 {
                     test.SetActive(false);
+                    RessourceDuJeu.SetMontantBois(-10);
+                    RessourceDuJeu.SetMontantOr(-10);
                     batimentActuel.GetComponent<Collider>().isTrigger = false;
                     StartCoroutine(EnConstruction(batimentActuel, vecteurDefini));
                 }
@@ -44,7 +46,7 @@ public class PlacementBatiment : MonoBehaviour {
     bool EstLegal()
     {
         constructionPossible = batimentActuel.GetComponent<ConstructionPossible>();
-        if (constructionPossible.colliders.Count > 0)
+        if (constructionPossible.colliders.Count > 0 || RessourceDuJeu.GetMontantBois() < 10 || RessourceDuJeu.GetMontantOr() < 10)
         {
             print("pas legal");
             
