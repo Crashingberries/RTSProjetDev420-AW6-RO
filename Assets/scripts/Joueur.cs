@@ -1,17 +1,21 @@
-namespace RTS
-{
-    public class Joueur
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+
+
+    public class Joueur : MonoBehaviour
     {
-        public int Num { get; set; }
-        public string Nom { get; set; }
-        public string Couleur { get; set; }
-        public int Ress_bois { get; set; }
-        public int Ress_or { get; set; }
-        public int Ress_pierre { get; set; }
-        public int Ress_mana { get; set; }
-        public int Ress_population { get; set; }
-        public bool Vaincu { get; set; } // <- Si le joueur a perdu OU declare forfait
-        public bool Vainqueur { get; set; } // <- Si le joueur a gagne (il est le seul restant...)
+    public int Num; //{ get; set; }
+    public string Nom; //{ get; set; }
+    public string Couleur;//{ get; set; }
+    public int Ress_bois;//{ get; set; }
+    public int Ress_or;//{ get; set; }
+    public int Ress_mana; //{ get; set; }
+    public int Ress_population; //{ get; set; }
+    public bool Vaincu; //{ get; set; } // <- Si le joueur a perdu OU declare forfait
+    public bool Vainqueur; //{ get; set; } // <- Si le joueur a gagne (il est le seul restant...)
 
         public Joueur()
         {
@@ -20,7 +24,6 @@ namespace RTS
             Couleur = "blanc";
             Ress_bois = 0;
             Ress_or = 0;
-            Ress_pierre = 0;
             Ress_mana = 0;
             Ress_population = 0;
             Vaincu = false;
@@ -31,9 +34,8 @@ namespace RTS
         {
             Num = _num;
             Nom = _nom;
-            Ress_bois = 100;
-            Ress_or = 50;
-            Ress_pierre = 150;
+            Ress_bois = 5000;
+            Ress_or = 5000;
             Ress_mana = 0;
             Ress_population = 10;
             Vaincu = false;
@@ -79,10 +81,6 @@ namespace RTS
         {
             Ress_or += nbr;
         }
-        public void AjouterPierre(int nbr)
-        {
-            Ress_pierre += nbr;
-        }
         public void AjouterMana(int nbr)
         {
             Ress_mana += nbr;
@@ -104,10 +102,6 @@ namespace RTS
         {
             Ress_or -= nbr;
         }
-        public void RetirerPierre(int nbr)
-        {
-            Ress_pierre -= nbr;
-        }
         public void RetirerMana(int nbr)
         {
             Ress_mana -= nbr;
@@ -125,5 +119,9 @@ namespace RTS
         {
             Vaincu = true;
         }
+    private void Start()
+    {
+        Joueur Test= new Joueur(1,"Demo");
+        print(Test.Nom);
     }
 }

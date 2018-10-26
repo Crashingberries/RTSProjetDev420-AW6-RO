@@ -39,18 +39,17 @@ public class PlacementBatiment : MonoBehaviour {
                 
             }
         }
-    }   
+    }
 
     bool EstLegal()
     {
+        Joueur test = FindObjectOfType<Joueur>();
+        print(test.Nom);
         constructionPossible = batimentActuel.GetComponent<ConstructionPossible>();
-        if (constructionPossible.colliders.Count > 0)
-        {
-            print("pas legal");
-            
+        if (constructionPossible.colliders.Count > 0 )
+        {            
             return false;
         }
-        print("legal");
         return true;
 
     }
@@ -65,7 +64,6 @@ public class PlacementBatiment : MonoBehaviour {
     {
         for (float i = 10; i >= 0; i=i-0.3f)
         {
-            print(i);
             construction.transform.position = new Vector3(placement.x, placement.y-i, placement.z);
             yield return new WaitForSeconds(0.2f);
         }
