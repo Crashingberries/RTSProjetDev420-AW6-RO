@@ -6,10 +6,9 @@ public class ActionsBatiment : MonoBehaviour {
     
     public Transform t_batiment;
     public Vector3 ptdr;
-    public GameObject raliement;
-    private GameObject raliement2; // COPIE de raliement
-
-    private bool placer_ptdr;
+    public GameObject PointDeRaliement;
+    public bool tmpBool;
+   // private GameObject raliement2; // COPIE de raliement
 
 	// Use this for initialization
 	void Start () {
@@ -20,32 +19,21 @@ public class ActionsBatiment : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (placer_ptdr)
+        if (PointDeRaliement.activeSelf && tmpBool)
         {
-            raliement2.transform.position = GetMousePosition();
-            if (Input.GetMouseButtonDown(0))
+            PointDeRaliement.transform.position = GetMousePosition();
+            if (Input.GetMouseButtonDown(1))
             {
-                ptdr = GetMousePosition();
-                placer_ptdr = false;
-                Destroy(raliement2);
+                tmpBool = false;
+              //  PointDeRaliement.SetActive(false);
             }
         }
 	}
 
     public void PlacerPTDR()
     {
-        if (!placer_ptdr)
-        {
+        PointDeRaliement.SetActive(true);
             //print("ptdr " + ptdr + " TRUE");
-            placer_ptdr = true;
-            raliement2 = Instantiate(raliement, GetMousePosition(), new Quaternion());
-        }
-        else
-        {
-            //print("ptdr " + ptdr + " FALSE");
-            placer_ptdr = false;
-            Destroy(raliement2);
-        }
     }
 
     private Vector3 GetMousePosition()
@@ -63,8 +51,10 @@ public class ActionsBatiment : MonoBehaviour {
 
     public void CreerUnit(GameObject unit)
     {
+        Vector3 tmp = PointDeRaliement.transform.position;
         Vector3 pos = new Vector3(t_batiment.position.x+10, t_batiment.position.y, t_batiment.position.z);
         GameObject f = Instantiate(unit, pos, t_batiment.rotation);
+        f.transform.position= Vector3.MoveTowards(f.transform.position, tmp, 10 * Time.deltaTime);
         f.SendMessage("SetRaliementCible", ptdr);
     }
 }
