@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
     public class Joueur : MonoBehaviour
     {
+    public static Joueur J1,J2;
     public int Num; //{ get; set; }
     public string Nom; //{ get; set; }
     public string Couleur;//{ get; set; }
@@ -34,7 +35,7 @@ using UnityEngine.UI;
         {
             Num = _num;
             Nom = _nom;
-            Ress_bois = 5000;
+            Ress_bois = 160;
             Ress_or = 5000;
             Ress_mana = 0;
             Ress_population = 10;
@@ -111,7 +112,6 @@ using UnityEngine.UI;
             Ress_population -= nbr;
         }
 
-
         //===========================================
         // Actions joueur
         //===========================================
@@ -121,7 +121,10 @@ using UnityEngine.UI;
         }
     private void Start()
     {
-        Joueur Test= new Joueur(1,"Demo");
-        print(Test.Nom);
+        J1 = new Joueur(1,"Joueur 1");
+        J2 = new Joueur(2,"Joueur 2");
+    }
+    private void Update()
+    {
     }
 }
