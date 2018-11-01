@@ -22,7 +22,7 @@ public class ActionsBatiment : MonoBehaviour {
         if (PointDeRaliement.activeSelf && tmpBool)
         {
             PointDeRaliement.transform.position = GetMousePosition();
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(0))
             {
                 tmpBool = false;
               //  PointDeRaliement.SetActive(false);
@@ -32,6 +32,7 @@ public class ActionsBatiment : MonoBehaviour {
 
     public void PlacerPTDR()
     {
+        tmpBool = true;
         PointDeRaliement.SetActive(true);
             //print("ptdr " + ptdr + " TRUE");
     }
@@ -51,10 +52,8 @@ public class ActionsBatiment : MonoBehaviour {
 
     public void CreerUnit(GameObject unit)
     {
-        Vector3 tmp = PointDeRaliement.transform.position;
-        Vector3 pos = new Vector3(t_batiment.position.x+10, t_batiment.position.y, t_batiment.position.z);
-        GameObject f = Instantiate(unit, pos, t_batiment.rotation);
-        f.transform.position= Vector3.MoveTowards(f.transform.position, tmp, 10 * Time.deltaTime);
-        f.SendMessage("SetRaliementCible", ptdr);
+        Vector3 pos = PointDeRaliement.transform.position;
+        GameObject f = Instantiate(unit, pos, new Quaternion(0f,180f,0f,0f));
+       // f.SendMessage("SetRaliementCible", ptdr);
     }
 }

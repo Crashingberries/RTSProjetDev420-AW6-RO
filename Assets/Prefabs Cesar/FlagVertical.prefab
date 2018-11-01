@@ -157,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1215956492668440}
   m_LocalRotation: {x: -0.0000000032900394, y: 0.9961947, z: 0.000000037605304, w: -0.08715578}
-  m_LocalPosition: {x: 15.100754, y: 15.41, z: 0.4273388}
+  m_LocalPosition: {x: 145.3, y: 8.57, z: 422.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4861482161995882}
@@ -182,7 +182,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 366bd1ad4d692344695ab23546759199, type: 2}
+  - {fileID: 2100000, guid: 02e016ca4fecdd640bd7dd81aefb7221, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -217,7 +217,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: eb2a30120a70e23489017bc125e21fbd, type: 2}
+  - {fileID: 2100000, guid: 02e016ca4fecdd640bd7dd81aefb7221, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -252,7 +252,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 74b7e7cdf236e354fb398c2d4651de34, type: 2}
+  - {fileID: 2100000, guid: 02e016ca4fecdd640bd7dd81aefb7221, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -352,10 +352,10 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 7544b50e7d4b4744d832f3de871896b9, type: 2}
-  - {fileID: 2100000, guid: 7544b50e7d4b4744d832f3de871896b9, type: 2}
-  - {fileID: 2100000, guid: 7544b50e7d4b4744d832f3de871896b9, type: 2}
-  - {fileID: 2100000, guid: 7544b50e7d4b4744d832f3de871896b9, type: 2}
+  - {fileID: 2100000, guid: a656bfdb66f6aa84986e8717ac50b7d2, type: 2}
+  - {fileID: 2100000, guid: a656bfdb66f6aa84986e8717ac50b7d2, type: 2}
+  - {fileID: 2100000, guid: a656bfdb66f6aa84986e8717ac50b7d2, type: 2}
+  - {fileID: 2100000, guid: a656bfdb66f6aa84986e8717ac50b7d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -384,8 +384,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: -0.000030517578, z: -0.0000038146973}
-    m_Extent: {x: 5.0000086, y: 0.68403554, z: 5.000003}
+    m_Center: {x: 0, y: 0, z: -0.0000009536743}
+    m_Extent: {x: 5.0000086, y: 0.6840352, z: 5.000003}
   m_DirtyAABB: 0
 --- !u!183 &183873573227740146
 Cloth:

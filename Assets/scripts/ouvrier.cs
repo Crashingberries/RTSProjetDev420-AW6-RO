@@ -64,11 +64,6 @@ namespace RTS
             // ...
         }
 
-        public void Exploiter(RessourceNaturelle _ress)
-        {
-            // ...
-        }
-
         //j'ai ajoute
         public void Ameliorer(Batiment unBatiment)
         {
