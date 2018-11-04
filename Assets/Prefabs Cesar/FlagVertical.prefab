@@ -25,7 +25,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1310027005547876
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +158,7 @@ Transform:
   m_GameObject: {fileID: 1215956492668440}
   m_LocalRotation: {x: -0.0000000032900394, y: 0.9961947, z: 0.000000037605304, w: -0.08715578}
   m_LocalPosition: {x: 145.3, y: 8.57, z: 422.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4861482161995882}
   - {fileID: 4971361156296236}
@@ -308,7 +308,7 @@ BoxCollider:
   m_GameObject: {fileID: 1897019346439770}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -320,7 +320,7 @@ BoxCollider:
   m_GameObject: {fileID: 1382060007848968}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -332,7 +332,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1928814361904306}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -384,8 +384,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 0, z: -0.0000009536743}
-    m_Extent: {x: 5.0000086, y: 0.6840352, z: 5.000003}
+    m_Center: {x: 0.000030517578, y: 0, z: -0.0000019073486}
+    m_Extent: {x: 10.000017, y: 1.3680704, z: 10.000006}
   m_DirtyAABB: 0
 --- !u!183 &183873573227740146
 Cloth:

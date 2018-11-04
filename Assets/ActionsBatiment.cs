@@ -3,38 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ActionsBatiment : MonoBehaviour {
-    
+
     public Transform t_batiment;
     public Vector3 ptdr;
     public GameObject PointDeRaliement;
-    public bool tmpBool;
-   // private GameObject raliement2; // COPIE de raliement
+    private bool tmpBool, enCreationUnite;
+    public GameObject UniteCree;
+    private float vitesse;
+    // private GameObject raliement2; // COPIE de raliement
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start() {
+        vitesse = 10 * Time.deltaTime;
         t_batiment = GetComponent<Transform>();
-        ptdr = new Vector3(t_batiment.position.x + 10, t_batiment.position.y, t_batiment.position.z);
-        //print("ptdr " + ptdr);
+        ptdr = new Vector3(t_batiment.position.x + 15, t_batiment.position.y, t_batiment.position.z);
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         if (PointDeRaliement.activeSelf && tmpBool)
         {
             PointDeRaliement.transform.position = GetMousePosition();
             if (Input.GetMouseButtonDown(0))
             {
                 tmpBool = false;
-              //  PointDeRaliement.SetActive(false);
+                //  PointDeRaliement.SetActive(false);
             }
         }
-	}
+        if (enCreationUnite)
+        {
+            UniteCree.transform.position = Vector3.MoveTowards(UniteCree.transform.position, PointDeRaliement.transform.position, vitesse);
+            if (UniteCree.transform.position == PointDeRaliement.transform.position){ enCreationUnite = false; }
+        }
+    }
 
     public void PlacerPTDR()
     {
         tmpBool = true;
         PointDeRaliement.SetActive(true);
-            //print("ptdr " + ptdr + " TRUE");
+        //print("ptdr " + ptdr + " TRUE");
     }
 
     private Vector3 GetMousePosition()
@@ -53,7 +61,19 @@ public class ActionsBatiment : MonoBehaviour {
     public void CreerUnit(GameObject unit)
     {
         Vector3 pos = PointDeRaliement.transform.position;
-        GameObject f = Instantiate(unit, pos, new Quaternion(0f,180f,0f,0f));
-       // f.SendMessage("SetRaliementCible", ptdr);
+        UniteCree = Instantiate(unit, ptdr, new Quaternion(0f, 180f, 0f, 0f));
+        // f.SendMessage("SetRaliementCible", ptdr);
+        enCreationUnite = true;
     }
+    /*public void DeplacementTest(Vector3 unite, Vector3 raliement)
+    {
+        print("DeplacementTest");
+        float vitesse = 10 * Time.deltaTime;
+        while (unite!=raliement)
+        {
+            print(unite);
+            unite = Vector3.MoveTowards(unite,raliement,vitesse);
+        }
+        enCreationUnite = false;
+    }*/
 }
