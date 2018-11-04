@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ActionsBatiment : MonoBehaviour {
     
@@ -66,5 +64,6 @@ public class ActionsBatiment : MonoBehaviour {
         Vector3 pos = new Vector3(t_batiment.position.x+10, t_batiment.position.y, t_batiment.position.z);
         GameObject f = Instantiate(unit, pos, t_batiment.rotation);
         f.SendMessage("SetRaliementCible", ptdr);
+        MessagesToPlayer.PasAssezRessources(true, false, false);
     }
 }

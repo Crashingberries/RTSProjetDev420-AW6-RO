@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RTS
-{
+
+
     public class Joueur : MonoBehaviour
     {
-        public int Num { get; set; }
-        public string Nom { get; set; }
-        public string Couleur { get; set; }
-        public int Ress_bois { get; set; }
-        public int Ress_or { get; set; }
-        public int Ress_pierre { get; set; }
-        public int Ress_mana { get; set; }
-        public int Ress_population { get; set; }
-        public bool Vaincu { get; set; } // <- Si le joueur a perdu OU declare forfait
-        public bool Vainqueur { get; set; } // <- Si le joueur a gagne (il est le seul restant...)
+    public static Joueur J1,J2;
+    public int Num; //{ get; set; }
+    public string Nom; //{ get; set; }
+    public string Couleur;//{ get; set; }
+    public int Ress_bois;//{ get; set; }
+    public int Ress_or;//{ get; set; }
+    public int Ress_mana; //{ get; set; }
+    public int Ress_population; //{ get; set; }
+    public bool Vaincu; //{ get; set; } // <- Si le joueur a perdu OU declare forfait
+    public bool Vainqueur; //{ get; set; } // <- Si le joueur a gagne (il est le seul restant...)
 
         public Joueur()
         {
@@ -25,7 +25,6 @@ namespace RTS
             Couleur = "blanc";
             Ress_bois = 0;
             Ress_or = 0;
-            Ress_pierre = 0;
             Ress_mana = 0;
             Ress_population = 0;
             Vaincu = false;
@@ -36,9 +35,8 @@ namespace RTS
         {
             Num = _num;
             Nom = _nom;
-            Ress_bois = 100;
-            Ress_or = 50;
-            Ress_pierre = 150;
+            Ress_bois = 160;
+            Ress_or = 5000;
             Ress_mana = 0;
             Ress_population = 10;
             Vaincu = false;
@@ -84,10 +82,6 @@ namespace RTS
         {
             Ress_or += nbr;
         }
-        public void AjouterPierre(int nbr)
-        {
-            Ress_pierre += nbr;
-        }
         public void AjouterMana(int nbr)
         {
             Ress_mana += nbr;
@@ -101,52 +95,22 @@ namespace RTS
         //===========================================
         // Methodes de retrait de ressources
         //===========================================
-        public bool RetirerBois(int nbr)
-		{
-			if(nbr > Ress_bois)
-			{
-				return false;
-			}
-			Ress_bois -= nbr;
-			return true;
-		}
-		public bool RetirerOr(int nbr)
-		{
-			if (nbr > Ress_or)
-			{
-				return false;
-			}
-			Ress_or -= nbr;
-			return true;
-		}
-		public bool RetirerPierre(int nbr)
-		{
-			if (nbr > Ress_pierre)
-			{
-				return false;
-			}
-			Ress_pierre -= nbr;
-			return true;
-		}
-		public bool RetirerMana(int nbr)
-		{
-			if (nbr > Ress_mana)
-			{
-				return false;
-			}
-			Ress_mana -= nbr;
-			return true;
-		}
-		public bool RetirerPopulation(int nbr)
-		{
-			if (nbr > Ress_population)
-			{
-				return false;
-			}
-			Ress_population -= nbr;
-			return true;
-		}
-
+        public void RetirerBois(int nbr)
+        {
+            Ress_bois -= nbr;
+        }
+        public void RetirerOr(int nbr)
+        {
+            Ress_or -= nbr;
+        }
+        public void RetirerMana(int nbr)
+        {
+            Ress_mana -= nbr;
+        }
+        public void RetirerPopulation(int nbr)
+        {
+            Ress_population -= nbr;
+        }
 
         //===========================================
         // Actions joueur
@@ -155,12 +119,13 @@ namespace RTS
         {
             Vaincu = true;
         }
-		
-		public void Start(){
-			
-		}
-		public void Update(){
-			
-		}
+    private void Start()
+    {
+        J1 = new Joueur(1,"Joueur 1");
+        J2 = new Joueur(2,"Joueur 2");
+        //print("JOUEUR START");
+    }
+    private void Update()
+    {
     }
 }
