@@ -10,9 +10,9 @@ public class Recolte : MonoBehaviour {
     [Range(1, 20)]
     private float vitesse = 10;
 
-    private int compteur;
+    private static int compteur = 0;
 
-    Animator anim;
+    public static Animator anim;
 
     Rigidbody rbody;
 
@@ -20,8 +20,10 @@ public class Recolte : MonoBehaviour {
 
     private Vector3 positionCible;
 
-    private bool enMouvement;
-    private bool enRecolte;
+    public static bool enMouvement;
+    public static bool enRecolteOr;
+   
+    public static bool enRecolteBois;
 
     [SerializeField] private float nextActionTime = 0f;
     public float period = 2f;
@@ -38,14 +40,28 @@ public class Recolte : MonoBehaviour {
     }
     void Update()
     {
-        if (enRecolte)
+        if (enRecolteOr)
         {
             if (Time.time > nextActionTime)
             {
                 print("incrémentation");
                 nextActionTime = Time.time + period;
-                ActionRecolte();
+                ActionRecolteOr();
             }
+        }
+        if (enRecolteBois)
+        {
+            
+            
+            if (Time.time > nextActionTime)
+            {
+                anim.SetBool("EnMouvement", false);
+                anim.SetBool("Attaque", true);
+                print("incrementation bois");
+                nextActionTime = Time.time + period;
+                ActionRecolteBois();
+            }
+            //anim.SetBool("Attaque", false);
         }
     }
 
@@ -55,44 +71,78 @@ public class Recolte : MonoBehaviour {
         if (collision.gameObject.name == "MineOr")
         {
             anim.SetBool("Attaque", true);
-            enRecolte = true;
+            enRecolteOr = true;
             print("dans le trigger");
         }
-        
+        if (collision.gameObject.tag == "Arbre")
+        {
+            anim.SetBool("Attaque", true);
+            enRecolteBois = true;
+            print("dans le trigger");
+        }
+
+
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionExitOr(Collision collision)
     {
 
         anim.SetBool("Attaque",false);
         print("sorti du trigger");
-        enRecolte = false;
+        enRecolteOr = false;
+        
 
-    }    
-
-   /* private void InitializeTimer()
+    }
+    private void OnCollisionExitBois(Collision collision)
     {
-        compteur = 0;
-        ControleAugmentation.Interval = 2000;
-        ControleAugmentation.Enabled = true;
-        ControleAugmentation.Elapsed += new ElapsedEventHandler(ActionRecolte);
-    }*/
 
-    public void ActionRecolte()
+        anim.SetBool("Attaque", false);
+        print("sorti du trigger");
+        enRecolteBois = false;
+        
+
+    }
+
+    /* private void InitializeTimer()
+     {
+         compteur = 0;
+         ControleAugmentation.Interval = 2000;
+         ControleAugmentation.Enabled = true;
+         ControleAugmentation.Elapsed += new ElapsedEventHandler(ActionRecolte);
+     }*/
+
+    public void ActionRecolteOr()
     {
+        
         RessourceDuJeu.IncrementerOr();
         compteur++;
         if (compteur >= 5)
         {  
-            enRecolte = false;
+            enRecolteOr = false;
             anim.SetBool("Attaque", false);
             Destroy(GameObject.FindGameObjectWithTag("MineOr"));
+            compteur = 0;
 
         }   
     }
-
+    public static void ActionRecolteBois()
+    {
         
-  
+        RessourceDuJeu.IncrementerBois();
+        compteur++;
+        if (compteur >= 5)
+        {
+            enRecolteBois = false;
+            //Destroy(GameObject.FindGameObjectWithTag("Arbre"));
+            
+            Debug.Log("Arbre fini");
+          
+            compteur = 0;
+        }
+    }
+
+
+
 }
 
 

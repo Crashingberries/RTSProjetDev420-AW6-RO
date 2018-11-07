@@ -8,6 +8,10 @@ TagManager:
   - Friendly
   - MineOr
   - Ennemi
+  - Arbre
+  - GameManager
+  - QM_Tree
+  - Terrain
   layers:
   - Default
   - TransparentFX

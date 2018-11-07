@@ -7,6 +7,7 @@ public class RessourceDuJeu  {
     public static event EventHandler MontantOrChangement;
     public static event EventHandler MontantBoisChangement;
     public static event EventHandler MontantPopChangement;
+    
 
     private static int montantOr = 0;
     private static int montantBois = 0;

@@ -12,6 +12,12 @@ public class FenetreRessource : MonoBehaviour {
             UpdateRessourceText();
         };
         UpdateRessourceText();
+
+        RessourceDuJeu.MontantBoisChangement += delegate (object sender, EventArgs e)
+        {
+            UpdateRessourceText();
+        };
+        UpdateRessourceText();
     }
 
 	private void UpdateRessourceText()
