@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 
 
-    public class Joueur : MonoBehaviour
+    public class Joueur
     {
-    public static Joueur J1,J2;
+    public static Joueur J1 = new Joueur(1,"Joueur 1");
+    public static Joueur J2 = new Joueur(2,"Joueur 2");
     public int Num; //{ get; set; }
     public string Nom; //{ get; set; }
     public string Couleur;//{ get; set; }
@@ -121,10 +122,6 @@ using UnityEngine.UI;
         }
     private void Start()
     {
-        J1 = new Joueur(1,"Joueur 1");
-        J2 = new Joueur(2,"Joueur 2");
-    }
-    private void Update()
-    {
+        ;
     }
 }
