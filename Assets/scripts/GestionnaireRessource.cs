@@ -38,7 +38,7 @@ public class GestionnaireRessource : MonoBehaviour
     }
 
 
-    private void RespawnTree()
+  private void RespawnTree()
     {
 
         if (managedTrees.Count == 0)
@@ -62,5 +62,10 @@ public class GestionnaireRessource : MonoBehaviour
     {
 
         managedTrees.Add(new QM_Tree(_terrainName, _treeIDX, _respawnTime, _marker));
+    }
+    public void RemoveTerrainTree(string _terrainName, int _treeIDX, float _respawnTime, Transform _marker)
+    {
+
+        managedTrees.Remove(new QM_Tree(_terrainName, _treeIDX, _respawnTime, _marker));
     }
 }

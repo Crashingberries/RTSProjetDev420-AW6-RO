@@ -104,6 +104,7 @@
      <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_UVAnimation.cs" />
      <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_UVScroll.cs" />
      <Compile Include="Assets\scfr.cs" />
+     <Compile Include="Assets\scripts\Arbre.cs" />
      <Compile Include="Assets\scripts\Archer.cs" />
      <Compile Include="Assets\scripts\Atelier.cs" />
      <Compile Include="Assets\scripts\AttaqueManager.cs" />
@@ -128,8 +129,12 @@
      <Compile Include="Assets\scripts\GestionnaireUnit.cs" />
      <Compile Include="Assets\scripts\Habitation.cs" />
      <Compile Include="Assets\scripts\HealthManager.cs" />
+     <Compile Include="Assets\scripts\InfanterieLourde.cs" />
      <Compile Include="Assets\scripts\joueur.cs" />
+     <Compile Include="Assets\scripts\Lancier.cs" />
      <Compile Include="Assets\scripts\Mage.cs" />
+     <Compile Include="Assets\scripts\MageMonte.cs" />
+     <Compile Include="Assets\scripts\MenuSetup.cs" />
      <Compile Include="Assets\scripts\ouvrier.cs" />
      <Compile Include="Assets\scripts\Partie.cs" />
      <Compile Include="Assets\scripts\PlacementBatiment.cs" />
@@ -143,10 +148,12 @@
      <Compile Include="Assets\scripts\ressourcenaturelle.cs" />
      <Compile Include="Assets\scripts\RessourceNode.cs" />
      <Compile Include="Assets\scripts\SelectionSquare.cs" />
+     <Compile Include="Assets\scripts\terrainScript.cs" />
      <Compile Include="Assets\scripts\Treechop.cs" />
      <Compile Include="Assets\scripts\unit.cs" />
      <Compile Include="Assets\scripts\Unite.cs" />
      <Compile Include="Assets\sphere.cs" />
+     <Compile Include="Assets\Test.cs" />
      <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\RFX4_CutoutBorderMobile.shader" />
      <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\Portal\RFX4_PortalSky.shader" />
      <None Include="Assets\Gaia\3rd Party Samplers\NatureManufacture\_Readme.txt" />

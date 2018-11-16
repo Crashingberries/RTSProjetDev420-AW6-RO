@@ -16,13 +16,13 @@ public class Recolte : MonoBehaviour {
 
     Rigidbody rbody;
 
-
+    
 
     private Vector3 positionCible;
 
     public static bool enMouvement;
     public static bool enRecolteOr;
-   
+    public static bool arbreFini { get; set; }
     public static bool enRecolteBois;
 
     [SerializeField] private float nextActionTime = 0f;
@@ -125,6 +125,7 @@ public class Recolte : MonoBehaviour {
 
         }   
     }
+   
     public static void ActionRecolteBois()
     {
         
@@ -136,7 +137,7 @@ public class Recolte : MonoBehaviour {
             //Destroy(GameObject.FindGameObjectWithTag("Arbre"));
             
             Debug.Log("Arbre fini");
-          
+            arbreFini = true;
             compteur = 0;
         }
     }

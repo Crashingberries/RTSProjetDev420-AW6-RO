@@ -1,7 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace RTS
 {
     public class Fantassin : Unite
     {
+        public Texture2D image;
         public Fantassin() : base()
         {
 

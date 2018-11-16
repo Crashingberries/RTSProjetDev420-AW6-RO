@@ -18,6 +18,7 @@ namespace RTS
         public Transform sphere3;
         public Transform sphere4;
         */
+       
 
         public Material matNormal;
         public Material matHighlight;
@@ -25,6 +26,7 @@ namespace RTS
 
         [System.NonSerialized]
         public List<GameObject> uniteSelectionnees = new List<GameObject>();
+        public List<GameObject> _uniteSelectionnees { get { return uniteSelectionnees; } }
 
         GameObject highlightCetteUnite;
 
@@ -91,6 +93,7 @@ namespace RTS
                             uniteActuelle.GetComponent<MeshRenderer>().material = matSelection;
                             print(uniteActuelle.name);
                             uniteSelectionnees.Add(uniteActuelle);
+                           // MenuSetup.UnitIconTextures.Add(Recolte.);
 ;                       }
                         else
                         {

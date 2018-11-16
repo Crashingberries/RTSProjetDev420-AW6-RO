@@ -1,3 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace RTS
 {
     //j'ai renomme la classe Unit en Unite
@@ -13,6 +17,10 @@ namespace RTS
         public int PuissanceAttaque { get; set; }//renomme en PuissanceAttaque
         public int VitesseAttaque { get; set; }//j'ai ajoute
 
+        
+        
+
+        //public Texture2D MenuIcon { get; set; }
 
         //j'ai ajoute
         public Unite() : base()
@@ -43,6 +51,7 @@ namespace RTS
             VitesseAttaque = uneVitesseAttaque;
         }
 
+      
         /*public Unite(int PvM, int PaM, Position _pos) : base(PvM, PaM, _pos)
         {
             PV = PvM; PvMax = PvM;

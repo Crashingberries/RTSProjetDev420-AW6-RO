@@ -1,7 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace RTS
 {
     public class Cavalier : Unite
     {
+        public Texture2D image;
         public Cavalier() : base()
         {
 

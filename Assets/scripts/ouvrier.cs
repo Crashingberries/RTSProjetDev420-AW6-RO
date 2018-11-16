@@ -4,27 +4,31 @@ using UnityEngine;
 
 namespace RTS
 {
-    public class Ouvrier : Unite
+    public class ouvrier : Unite
     {
         public static Batiment[] BatimentsAConstruire;
         public bool EnConstruction { get; set; }
         public bool EnReparation { get; set; }
         public bool EnExploitation { get; set; }
-
+        
+        
+        public Texture2D Image;
+        
         /*public Ouvrier(int PvM, int PaM, Position _pos, int _vitesse, bool _enDepl, Position _pointDepl, object _cible) : base(PvM, PaM, _pos, _vitesse, _enDepl, _pointDepl, _cible)
         {
 
         }*/
         //j'ai ajoute
-        public Ouvrier() : base()
+        public ouvrier() : base()
         {
             EnConstruction = false;
             EnReparation = false;
             EnExploitation = false;
         }
 
+
         //j'ai ajoute
-        public Ouvrier(int unPv, int uneArmure, Position unePosition, string unNom, int unCoutOr, int unCoutBois, int uneVitesseDeplacement, int unePuissanceAttaque, int unePorteeMin, int unePorteeMax, int uneVitesseAttaque) :
+        public ouvrier(int unPv, int uneArmure, Position unePosition, string unNom, int unCoutOr, int unCoutBois, int uneVitesseDeplacement, int unePuissanceAttaque, int unePorteeMin, int unePorteeMax, int uneVitesseAttaque) :
             base(unPv, uneArmure, unePosition, unNom, unCoutOr, unCoutBois, uneVitesseDeplacement, unePuissanceAttaque, unePorteeMin, unePorteeMax, uneVitesseAttaque)
         {
             EnConstruction = false;
@@ -49,6 +53,10 @@ namespace RTS
             EnReparation = false;
         }*/
 
+        public void AjoutICon()
+        {
+            MenuSetup.UnitIconTextures.Add(Image);
+        }
         public override void Attaquer(ref Construction _construction)
         {
             // ...

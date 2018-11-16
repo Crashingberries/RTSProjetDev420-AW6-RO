@@ -22,12 +22,13 @@ public class RecolteBois : MonoBehaviour
         // Prefab to spawn at terrain tree loc for TIIIIIIMBER!
     private GestionnaireRessource rMgr;    // Resource manager script
     public float respawnTimer;            // Duration of terrain tree respawn timer
-    public List<TreeInstance> newTrees = new List<TreeInstance>();
+    public List<TreeInstance> newTrees; //= new List<TreeInstance>(Terrain.activeTerrain.terrainData.treeInstances);
+
     void Start()
     {
-
-
-     
+      
+        newTrees = new List<TreeInstance>(Terrain.activeTerrain.terrainData.treeInstances);
+        Debug.Log("Nombre d'arbre: " + newTrees.Count); 
 
         if (harvestTreeDistance <= 0)
         {
@@ -50,7 +51,8 @@ public class RecolteBois : MonoBehaviour
 
     void Update()
     {
-        
+        RemoveTree();
+
         if (Input.GetMouseButtonUp(0))
         {
            
@@ -64,7 +66,7 @@ public class RecolteBois : MonoBehaviour
                     
                     return;
                 }
-                               // Did we click on the same Terrain as last time (or very first time?)
+                // Did we click on the same Terrain as last time (or very first time?)
                 if (lastTerrain == null || lastTerrain != hit.collider.tag)
                 {
                     
@@ -78,13 +80,12 @@ public class RecolteBois : MonoBehaviour
 
                 if (hit.point.y - .2f > groundHeight)
                 {
-
+                    
                     // It's a terrain tree, check Proximity and Harvest
                     if (CheckProximity())
                     {
                         Debug.Log("ca devrait recolter");
                         HarvestWood();
-                        
                     }
               
 
@@ -117,16 +118,38 @@ public class RecolteBois : MonoBehaviour
 
         for (int cnt = 0; cnt < rMgr.managedTrees.Count; cnt++)
         {
+        
             if (rMgr.managedTrees[cnt].terrainName == _terrainName && rMgr.managedTrees[cnt].treeINDEX == _treeINDEX)
             {
                 Debug.Log("Tree has been used recently");
                 beenUsed = true;
-            }
+                newTrees.RemoveAt(cnt);
+                terrain.terrainData.treeInstances = newTrees.ToArray();            }
         }
 
         return beenUsed;
     }
+    private void RemoveTree()
+    {
+      int treeCount = terrain.terrainData.treeInstances.Length;
+        for (int cnt = 0; cnt < treeCount; cnt++)
+        {
 
+            Vector3 thisTreePos = Vector3.Scale(terrain.terrainData.treeInstances[cnt].position, terrain.terrainData.size) + terrain.transform.position;
+            float thisTreeDist = Vector3.Distance(thisTreePos, hit.point);
+        }
+            //if (Recolte.arbreFini)
+            //{
+            //   // newTrees.Remove;
+            //    Debug.Log("Nombre d'arbre: " + newTrees.Count);
+            //    Debug.Log("Arbre enleve");
+            //}
+        
+        //terrain.terrainData.treeInstances = newTrees.ToArray();
+     
+        //float[,] heights = terrain.terrainData.GetHeights(0, 0, 0, 0);
+        //terrain.terrainData.SetHeights(0, 0, heights);
+    }
 
     private void HarvestWood()
     {
@@ -140,14 +163,14 @@ public class RecolteBois : MonoBehaviour
         // which is a caution against a 15,000 tree terrain
 
 
-        // var newTrees = new List<TreeInstance>(terrain.terrainData.treeInstances);
+       
         //TreeChop treeChop = FindObjectOfType<TreeChop>();
         
         
      //Copie de mon treeInstance dans mon newTrees mais index out of range
        
         
-        /* for (int cnt = 0; cnt < treeCount; cnt++)
+       /*  for (int cnt = 0; cnt < treeCount; cnt++)
         {
             newTrees[cnt] = terrain.terrainData.treeInstances[cnt];
         }*/
@@ -155,10 +178,10 @@ public class RecolteBois : MonoBehaviour
 
             for (int cnt = 0; cnt<treeCount; cnt++)
         {
-
+          
             Vector3 thisTreePos = Vector3.Scale(terrain.terrainData.treeInstances[cnt].position, terrain.terrainData.size) + terrain.transform.position;
             float thisTreeDist = Vector3.Distance(thisTreePos, hit.point);
-           
+        
 
             if (thisTreeDist < treeDist)
             {
@@ -168,12 +191,11 @@ public class RecolteBois : MonoBehaviour
                 Recolte.enRecolteBois = true;
               
                 // Code qui devrait remplacer mon instance de terrain par mon array newTrees ou l'arbre viser devrait avoir disparu
-                /*newTrees.RemoveAt(treeIDX);
+              
                 
-                terrain.terrainData.treeInstances = newTrees.ToArray();
-                float[,] heights = terrain.terrainData.GetHeights(0, 0, 0, 0);
-                terrain.terrainData.SetHeights(0, 0, heights);*/                
 
+                         
+                
                 break;
                 
 
@@ -198,14 +220,16 @@ public class RecolteBois : MonoBehaviour
            
             GameObject marker = GameObject.CreatePrimitive(PrimitiveType.Cube);
             marker.transform.position = treePos;
-            Debug.Log("Ca se rend ici?");
+           /* newTrees.RemoveAt(treeIDX);
+            terrain.terrainData.treeInstances = newTrees.ToArray();
+            Debug.Log("Ca devrait effacer l'arbre");*/
             // Example of spawning a placed tree at this location, just for demo purposes
             // it will slide through terrain and disappear in 4 seconds
            
 
            
             // Add this terrain tree and cube to our Resource Manager for demo purposes
-            rMgr.AddTerrainTree(terrain.name, treeIDX, Time.time + respawnTimer, marker.transform);
+            rMgr.RemoveTerrainTree(terrain.name, treeIDX, Time.time + respawnTimer, marker.transform);
 
             if (rotateOuvrier)
             {
