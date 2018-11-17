@@ -13,7 +13,7 @@ public class PlayerMovements : MonoBehaviour {
     
 
     private Vector3 positionCible;
-    private bool enMouvement;
+    public bool enMouvement;
 
     const int RIGHT_MOUSE_BUTTON = 1;
 
