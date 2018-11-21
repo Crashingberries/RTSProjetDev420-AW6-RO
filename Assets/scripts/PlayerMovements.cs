@@ -9,30 +9,15 @@ public class PlayerMovements : MonoBehaviour {
     [SerializeField][Range(1, 200)]
     private float vitesse = 10;
     private Vector3 positionCible;
-    public bool enMouvement;
-    public Animator animator;
-    public SphereCollider portee;
-    public Rigidbody self;
-    public Rigidbody cible;
+    private bool enMouvement;
+    private Animator animator;
 
     const int CLIC_DROIT = 1;
     const int CLIC_GAUCHE = 0;
 
-    public Rigidbody GetCible()
-    {
-        return this.cible;
-    }
-
-    public void SetCible(Rigidbody cible)
-    {
-        this.cible = cible;
-    }
-
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        self = GetComponent<Rigidbody>();
-        portee = GetComponent<SphereCollider>();
     }
     // Use this for initialization
     void Start () {
@@ -65,6 +50,7 @@ public class PlayerMovements : MonoBehaviour {
         if (other.name != "Terrain")
         {
             if (other.tag != "Friendly") {
+                transform.LookAt(other.transform);
                 animator.SetBool("Attaque", true);
                 enMouvement = false;
                 print(other.name);
