@@ -13,6 +13,7 @@ Assets/Fantasy Defensive Structures*
 Assets/Fortress Gate_Free*
 Assets/FrogamesFantasyHousePack*
 Assets/Gaia*
+Assets/Objects*
 Assets/GaiaExports*
 Assets/GaiaSessions*
 Assets/KriptoFX*
@@ -93,7 +94,6 @@ Packages/manifest.json
 Assets/ASSETS-20180928T161612Z-002.zip.meta
 Assets/ASSETS-20180928T161612Z-001.zip.meta
 Assembly-CSharp.csproj
-Assets/terrain.unity
 Assets/AssetsBuilding/Material.meta
 Assets/AssetsBuilding/Models.meta
 Assets/AssetsBuilding/Material/Blacksmith_mtr.mat
@@ -110,21 +110,8 @@ Assets/AssetsBuilding/Material/Hunting_house_mtr.mat.meta
 *.mat
 *.meta
 *.fbx
-*.prefab
 *.meta
 Assets/Forge/Models/Materials.meta
 Assets/Forge/Materials.meta
 Assets/Forge/Textures.meta
-Assets/terrain.unity
 Assets/Forge/Materials.meta
-.vs/RTSProjetDev420-AW6-RO/v15/.suo
-.vs/RTSProjetDev420-AW6-RO/v15/.suo
-.vs/RTSProjetDev420-AW6-RO/v15/.suo
-.vs/RTSProjetDev420-AW6-RO/v15/Server/sqlite3/storage.ide
-Assets/Prefabs/Unités/Ouvrier.prefab
-Assets/Prefabs/Unités/Ouvrier.prefab
-Assets/Prefabs/Unités/Ouvrier.prefab
-Assets/Prefabs/Unités/Ouvrier.prefab.meta
-Assets/Forge/Materials.meta
-Assets/Forge/Models/Materials.meta
-Assets/Models.meta
