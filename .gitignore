@@ -107,12 +107,9 @@ Assets/AssetsBuilding/Material/House_green_mtr.mat.meta
 Assets/AssetsBuilding/Material/House_red_mtr.mat
 Assets/AssetsBuilding/Material/House_red_mtr.mat.meta
 Assets/AssetsBuilding/Material/Hunting_house_mtr.mat.meta
-*.mat
-*.meta
-*.fbx
-*.meta
 Assets/Forge/Models/Materials.meta
 Assets/Forge/Materials.meta
 Assets/Forge/Textures.meta
 Assets/terrain.unity
 Assets/Forge/Materials.meta
+*.meta

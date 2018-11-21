@@ -9,6 +9,7 @@ TagManager:
   - MineOr
   - Ennemi
   - Arbre
+  - Minimap
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - Terrain
   - Batiment
-  - 
+  - Minimap
   - 
   - 
   - 
