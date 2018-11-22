@@ -8,6 +8,11 @@ TagManager:
   - Friendly
   - MineOr
   - Ennemi
+  - Ouvrier
+  - Fantassin
+  - Archer
+  - Lancier
+  - Chevalier
   layers:
   - Default
   - TransparentFX

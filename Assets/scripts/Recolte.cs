@@ -64,7 +64,7 @@ public class Recolte : MonoBehaviour {
     {
 
         anim.SetBool("Attaque",false);
-        print("sorti du trigger");
+        //print("sorti du trigger");
         enRecolte = false;
 
     }    
