@@ -68,19 +68,7 @@ public class ActionsBatiment : MonoBehaviour
                 commandes.First.Value.GetComponentInChildren<Text>().text = ouvrier_pour + "%\nx" + ouvrier_commande;
             }
         }
-        if (fanta_commande > 0)
-        {
-            if (fanta_pour >= 100)
-            {
-                fanta_pour = 0;
-                AnnulerCommandeUnit(commandes.First.Value);
-            }
-            else
-            {
-                if(Time.time - fanta_debut >= 0.2 && "Fantassin".Equals(commandes.First.Value.tag)) { fanta_pour++; fanta_debut = Time.time; }
-                commandes.First.Value.GetComponentInChildren<Text>().text = fanta_pour + "%\nx" + fanta_commande;
-            }
-        }
+        
         if (archer_commande > 0)
         {
             if (archer_pour >= 100)
@@ -92,6 +80,19 @@ public class ActionsBatiment : MonoBehaviour
             {
                 if (Time.time - archer_debut >= 0.2 && "Archer".Equals(commandes.First.Value.tag)) { archer_pour++; archer_debut = Time.time; }
                 commandes.First.Value.GetComponentInChildren<Text>().text = archer_pour + "%\nx" + archer_commande;
+            }
+        }
+        if (fanta_commande > 0)
+        {
+            if (fanta_pour >= 100)
+            {
+                fanta_pour = 0;
+                AnnulerCommandeUnit(commandes.First.Value);
+            }
+            else
+            {
+                if (Time.time - fanta_debut >= 0.2 && "Fantassin".Equals(commandes.First.Value.tag)) { fanta_pour++; fanta_debut = Time.time; }
+                commandes.First.Value.GetComponentInChildren<Text>().text = fanta_pour + "%\nx" + fanta_commande;
             }
         }
         if (lancier_commande > 0)
@@ -194,14 +195,6 @@ public class ActionsBatiment : MonoBehaviour
 
     public void AnnulerCommandeUnit(GameObject commande)
     {
-        if (commande == commandes.First.Value)
-        {
-            commandes.RemoveFirst();
-        }
-        else
-        {
-            commandes.Remove(commande);
-        }
         _commande = commandes.First.Value;
         switch (commande.tag)
         {
@@ -260,6 +253,14 @@ public class ActionsBatiment : MonoBehaviour
                 Joueur.J1.AjouterBois(50);
                 commande.GetComponentInChildren<Text>().text = "0%\nx" + chevalier_commande;
                 break;
+        }
+        if (commande == commandes.First.Value)
+        {
+            commandes.RemoveFirst();
+        }
+        else
+        {
+            commandes.Remove(commande);
         }
     }
 
