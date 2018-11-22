@@ -61,11 +61,11 @@ public class ActionsBatiment : MonoBehaviour
             {
                 ouvrier_pour = 0;
                 AnnulerCommandeUnit(commandes.First.Value);
+                //Instantiate(unit, pos, t_batiment.rotation);
             }
             else
             {
-                if (Time.time - ouvrier_debut >= 0.2 && "Ouvrier".Equals(commandes.First.Value.tag)) { ouvrier_pour++; ouvrier_debut = Time.time; }
-                commandes.First.Value.GetComponentInChildren<Text>().text = ouvrier_pour + "%\nx" + ouvrier_commande;
+                if (Time.time - ouvrier_debut >= 0.2 && "Ouvrier".Equals(commandes.First.Value.tag)) { ouvrier_pour++; ouvrier_debut = Time.time; commandes.First.Value.GetComponentInChildren<Text>().text = ouvrier_pour + "%\nx" + ouvrier_commande; }
             }
         }
         
@@ -75,11 +75,11 @@ public class ActionsBatiment : MonoBehaviour
             {
                 archer_pour = 0;
                 AnnulerCommandeUnit(commandes.First.Value);
+                //Instantiate(unit, pos, t_batiment.rotation);
             }
             else
             {
-                if (Time.time - archer_debut >= 0.2 && "Archer".Equals(commandes.First.Value.tag)) { archer_pour++; archer_debut = Time.time; }
-                commandes.First.Value.GetComponentInChildren<Text>().text = archer_pour + "%\nx" + archer_commande;
+                if (Time.time - archer_debut >= 0.2 && "Archer".Equals(commandes.First.Value.tag)) { archer_pour++; archer_debut = Time.time; commandes.First.Value.GetComponentInChildren<Text>().text = archer_pour + "%\nx" + archer_commande; }
             }
         }
         if (fanta_commande > 0)
@@ -88,11 +88,11 @@ public class ActionsBatiment : MonoBehaviour
             {
                 fanta_pour = 0;
                 AnnulerCommandeUnit(commandes.First.Value);
+                //Instantiate(unit, pos, t_batiment.rotation);
             }
             else
             {
-                if (Time.time - fanta_debut >= 0.2 && "Fantassin".Equals(commandes.First.Value.tag)) { fanta_pour++; fanta_debut = Time.time; }
-                commandes.First.Value.GetComponentInChildren<Text>().text = fanta_pour + "%\nx" + fanta_commande;
+                if (Time.time - fanta_debut >= 0.2 && "Fantassin".Equals(commandes.First.Value.tag)) { fanta_pour++; fanta_debut = Time.time; commandes.First.Value.GetComponentInChildren<Text>().text = fanta_pour + "%\nx" + fanta_commande; }
             }
         }
         if (lancier_commande > 0)
@@ -101,11 +101,11 @@ public class ActionsBatiment : MonoBehaviour
             {
                 lancier_pour = 0;
                 AnnulerCommandeUnit(commandes.First.Value);
+                //Instantiate(unit, pos, t_batiment.rotation);
             }
             else
             {
-                if (Time.time - lancier_debut >= 0.2 && "Lancier".Equals(commandes.First.Value.tag)) { lancier_pour++; lancier_debut = Time.time; }
-                commandes.First.Value.GetComponentInChildren<Text>().text = lancier_pour + "%\nx" + lancier_commande;
+                if (Time.time - lancier_debut >= 0.2 && "Lancier".Equals(commandes.First.Value.tag)) { lancier_pour++; lancier_debut = Time.time; commandes.First.Value.GetComponentInChildren<Text>().text = lancier_pour + "%\nx" + lancier_commande; }
             }
         }
     }
@@ -142,7 +142,6 @@ public class ActionsBatiment : MonoBehaviour
     public void CommanderUnit(GameObject commande)
     {
         commandes.AddLast(commande);
-        _commande = commandes.First.Value;
         switch (commande.tag)
         {
             case "Ouvrier":
@@ -195,7 +194,6 @@ public class ActionsBatiment : MonoBehaviour
 
     public void AnnulerCommandeUnit(GameObject commande)
     {
-        _commande = commandes.First.Value;
         switch (commande.tag)
         {
             case "Ouvrier":
