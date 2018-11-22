@@ -18,11 +18,11 @@ public class GestionnaireBatiment : MonoBehaviour {
 	}
     private void OnGUI()
     {
-        for (int i = 0; i < batiments.Length; i++)
+        /*for (int i = 0; i < batiments.Length; i++)
         {
             if(GUI.Button(new Rect(Screen.height / 20,Screen.height/15f + Screen.height / 12f * i, 100, 30),batiments[i].name)){
                 placementBatiment.ChoisirBatiment(batiments[i]);
             }
-        }
+        }*/
     }
 }
