@@ -45,16 +45,31 @@ public class PlayerMovements : MonoBehaviour {
         }*/
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.name != "Terrain")
+        if (other.name != "Terrain" && other.tag != "Friendly")
         {
-            if (other.tag != "Friendly") {
+            if (!enMouvement) {
                 transform.LookAt(other.transform);
                 animator.SetBool("Attaque", true);
-                enMouvement = false;
-                print(other.name);
+                //enMouvement = false;
+                //print(other.name);
             }
+            else
+            {
+                animator.SetBool("Attaque", false);
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.name != "Terrain" && collision.collider.tag != "Friendly")
+        {
+            transform.LookAt(collision.transform);
+            animator.SetBool("Attaque", true);
+            enMouvement = false;
+            //print(other.name);
         }
     }
 

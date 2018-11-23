@@ -69,6 +69,30 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1101 &1101049304604104864
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Attaque
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102147937723737344}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.925
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &1101187650578177998
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -110,6 +134,30 @@ AnimatorStateTransition:
   m_TransitionOffset: 0
   m_ExitTime: 0.8125
   m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &1101475298166882232
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: EnMouvement
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102554318840050264}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.8125
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -159,25 +207,25 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101724227319951868
+--- !u!1101 &1101629551276664036
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
+  - m_ConditionMode: 2
     m_ConditionEvent: Attaque
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102449117059306024}
+  m_DstState: {fileID: 1102762025296816866}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
-  m_ExitTime: 0.75
+  m_ExitTime: 0.875
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -291,6 +339,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: 1101770344414066704}
   - {fileID: 1101583971013793076}
+  - {fileID: 1101629551276664036}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -318,6 +367,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: 1101515467985464738}
   - {fileID: 1101421150108871038}
+  - {fileID: 1101475298166882232}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -421,7 +471,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101916627621367616}
-  - {fileID: 1101724227319951868}
+  - {fileID: 1101049304604104864}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -447,13 +497,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102762025296816866}
-    m_Position: {x: 352.11115, y: 79.600006, z: 0}
+    m_Position: {x: 372, y: 72, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102554318840050264}
-    m_Position: {x: 228, y: 276, z: 0}
+    m_Position: {x: 216, y: 216, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102449117059306024}
-    m_Position: {x: 719.6889, y: 251.48889, z: 0}
+    m_Position: {x: 540, y: 216, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102478967218904672}
     m_Position: {x: 209.3111, y: -129.31111, z: 0}
@@ -462,7 +512,7 @@ AnimatorStateMachine:
     m_Position: {x: 423.51105, y: -49.977783, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102147937723737344}
-    m_Position: {x: 501.25, y: 355.33884, z: 0}
+    m_Position: {x: 372, y: 348, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101933115076191938}
