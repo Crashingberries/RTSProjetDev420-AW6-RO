@@ -32,6 +32,8 @@ public class PlacementBatiment : MonoBehaviour {
                 if (test.activeSelf)
                 {
                     test.SetActive(false);
+                    RessourceDuJeu.SetMontantBois(-10);
+                    RessourceDuJeu.SetMontantOr(-10);
                     batimentActuel.GetComponent<Collider>().isTrigger = false;
                     StartCoroutine(EnConstruction(batimentActuel, vecteurDefini));
                     Joueur.J1.RetirerBois(50);
@@ -45,11 +47,18 @@ public class PlacementBatiment : MonoBehaviour {
     bool EstLegal()
     {
         constructionPossible = batimentActuel.GetComponent<ConstructionPossible>();
+<<<<<<< HEAD
         /*Pontentiel amelioration: Diviser la condition afin d'envoyer un message au Joueur
          *Prendre la bonne valeur de chaque consctruction (et non juste 50) 
          */
         if (constructionPossible.colliders.Count > 0  || Joueur.J1.Ress_bois<50) 
         {            
+=======
+        if (constructionPossible.colliders.Count > 0 || RessourceDuJeu.GetMontantBois() < 10 || RessourceDuJeu.GetMontantOr() < 10)
+        {
+            print("pas legal");
+            
+>>>>>>> origin/Julien_GestionVie
             return false;
         }
         return true;

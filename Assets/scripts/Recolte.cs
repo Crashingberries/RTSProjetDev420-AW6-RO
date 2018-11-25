@@ -80,7 +80,7 @@ public class Recolte : MonoBehaviour {
 
     public void ActionRecolte()
     {
-        RessourceDuJeu.IncrementerOr();
+        RessourceDuJeu.SetMontantOr(1);
         compteur++;
         if (compteur >= 5)
         {  
