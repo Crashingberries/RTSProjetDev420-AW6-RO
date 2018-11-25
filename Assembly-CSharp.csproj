@@ -263,7 +263,7 @@
     <Compile Include="Assets\scripts\Recolte.cs" />
     <Compile Include="Assets\scripts\RectangleSelection.cs" />
     <Compile Include="Assets\scripts\RessourceDuJeu.cs" />
-    <Compile Include="Assets\scripts\ressourcenaturelle.cs" />
+    <Compile Include="Assets\scripts\Ressourcenaturelle.cs" />
     <Compile Include="Assets\scripts\RessourceNode.cs" />
     <Compile Include="Assets\scripts\SelectionSquare.cs" />
     <Compile Include="Assets\scripts\unit.cs" />
