@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class ConstructionManager : MonoBehaviour {
-    
+
     public HealthManager[] all_barresVie;
     public Text[] all_textBarresVie;
     public BoxCollider _collider;
-    
+
 
     // Use this for initialization
     void Start () {
@@ -28,14 +27,14 @@ public class ConstructionManager : MonoBehaviour {
             print("Collider : NULL");
         }
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
     {
-        for(int i=0; i < all_textBarresVie.Length; i++)
+       /* for(int i=0; i < all_textBarresVie.Length; i++)
         {
             all_textBarresVie[i].text = all_barresVie[i].PvBar.value + "/" + all_barresVie[i].PvBar.maxValue + " PV";
-        }
+        }*/
 
 
         //print("Destruit");
@@ -55,5 +54,5 @@ public class ConstructionManager : MonoBehaviour {
         //}
     }
 
-    
+
 }

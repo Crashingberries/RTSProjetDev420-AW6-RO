@@ -20,7 +20,7 @@ public class PlacementBatiment : MonoBehaviour {
         Ray ray = new Ray(transform.position, transform.forward);
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit) && EstPlace == false)
         {
-            
+
             vecteurDefini.Set(hit.point.x, hit.collider.transform.position.y, hit.point.z);
             batimentActuel.transform.position = vecteurDefini;
         }
@@ -39,7 +39,7 @@ public class PlacementBatiment : MonoBehaviour {
                     Joueur.J1.RetirerBois(50);
                     print(Joueur.J1.Ress_bois);
                 }
-                
+
             }
         }
     }
@@ -48,10 +48,10 @@ public class PlacementBatiment : MonoBehaviour {
     {
         constructionPossible = batimentActuel.GetComponent<ConstructionPossible>();
         /*Pontentiel amelioration: Diviser la condition afin d'envoyer un message au Joueur
-         *Prendre la bonne valeur de chaque consctruction (et non juste 50) 
+         *Prendre la bonne valeur de chaque consctruction (et non juste 50)
          */
-        if (constructionPossible.colliders.Count > 0  || Joueur.J1.Ress_bois<50) 
-        {            
+        if (constructionPossible.colliders.Count > 0  || Joueur.J1.Ress_bois<50)
+        {
             return false;
         }
         return true;

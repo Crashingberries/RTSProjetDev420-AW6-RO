@@ -12,10 +12,10 @@ public class ConstructionPossible : MonoBehaviour {
     public Material shader2;
     // Use this for initialization
     void Start() {
- 
+
         quad = transform.Find("Quad").gameObject;
         rendTest = quad.GetComponent<Renderer>();
-        rendTest.enabled = true;       
+        rendTest.enabled = true;
     }
     private void OnGUI()
     {

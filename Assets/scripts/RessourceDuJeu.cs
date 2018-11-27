@@ -17,7 +17,7 @@ public class RessourceDuJeu  {
         montantOr += montant;
         if (MontantOrChangement != null) MontantOrChangement(null, EventArgs.Empty);
     }
-    
+
     public static int GetMontantOr()
     {
         return montantOr;

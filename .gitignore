@@ -31,10 +31,6 @@ Assets/Low_Poly_ResourceRocks*
 Assets/MagicBuildingPack*
 Assets/WesternKingdoms*
 
-<<<<<<< HEAD
-
-=======
->>>>>>> JVB
 # Visual Studio cache directory
 .vs/
 
@@ -107,13 +103,11 @@ Assets/AssetsBuilding/Material/House_green_mtr.mat.meta
 Assets/AssetsBuilding/Material/House_red_mtr.mat
 Assets/AssetsBuilding/Material/House_red_mtr.mat.meta
 Assets/AssetsBuilding/Material/Hunting_house_mtr.mat.meta
-<<<<<<< HEAD
-=======
+
 *.mat
 *.meta
 *.fbx
 *.meta
->>>>>>> origin/Julien_GestionVie
 Assets/Forge/Models/Materials.meta
 Assets/Forge/Materials.meta
 Assets/Forge/Textures.meta

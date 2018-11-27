@@ -12,7 +12,7 @@ public class HealthManager : MonoBehaviour {
     void Start ()
     {
        // PvBar = GetComponent<Slider>();
-        PVcourant = (int)PvBar.maxValue;
+        //PVcourant = (int)PvBar.maxValue;
     }
 
     public void SubirDegats(int degats)
@@ -23,6 +23,6 @@ public class HealthManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        PvBar.value = PVcourant;
+        //PvBar.value = PVcourant;
     }
 }

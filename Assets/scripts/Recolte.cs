@@ -33,8 +33,7 @@ public class Recolte : MonoBehaviour {
         anim = GetComponent<Animator>();
         positionCible = transform.position;
         rbody = GetComponent<Rigidbody>();
-        positionCible = GameObject.FindGameObjectWithTag("MineOr").transform.position;
-        print(positionCible);
+
     }
     void Update()
     {
@@ -51,24 +50,24 @@ public class Recolte : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+
         if (collision.gameObject.name == "MineOr")
         {
             anim.SetBool("Attaque", true);
             enRecolte = true;
             print("dans le trigger");
         }
-        
+
     }
 
     private void OnCollisionExit(Collision collision)
     {
 
         anim.SetBool("Attaque",false);
-        print("sorti du trigger");
+        //print("sorti du trigger");
         enRecolte = false;
 
-    }    
+    }
 
    /* private void InitializeTimer()
     {
@@ -80,19 +79,17 @@ public class Recolte : MonoBehaviour {
 
     public void ActionRecolte()
     {
-        RessourceDuJeu.SetMontantOr(1);
+        RessourceDuJeu.IncrementerOr();
         compteur++;
         if (compteur >= 5)
-        {  
+        {
             enRecolte = false;
             anim.SetBool("Attaque", false);
             Destroy(GameObject.FindGameObjectWithTag("MineOr"));
 
-        }   
+        }
     }
 
-        
-  
+
+
 }
-
-

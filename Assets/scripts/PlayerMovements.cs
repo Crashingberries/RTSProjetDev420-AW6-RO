@@ -24,7 +24,7 @@ public class PlayerMovements : MonoBehaviour {
 		positionCible = transform.position;
 		enMouvement = false;
     }
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButton(CLIC_DROIT))
