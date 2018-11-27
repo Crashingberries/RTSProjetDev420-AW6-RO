@@ -5,19 +5,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class FenetreRessource : MonoBehaviour {
 
-    private void Awake()
+	private void Update()
     {
-        RessourceDuJeu.MontantOrChangement += delegate (object sender, EventArgs e)
-        {
-            UpdateRessourceText();
-        };
-        UpdateRessourceText();
-    }
-
-	private void UpdateRessourceText()
-    {
-        transform.Find("MontantOr").GetComponent<Text>().text = "Or: " + RessourceDuJeu.GetMontantOr();
-        transform.Find("MontantBois").GetComponent<Text>().text = "Bois: " + RessourceDuJeu.GetMontantBois();
-        transform.Find("MontantPop").GetComponent<Text>().text = "Population: " + RessourceDuJeu.GetMontantPop()+"/200";
+        transform.Find("MontantOr").GetComponent<Text>().text = "Or: " + Joueur.J1.Ress_or;
+        transform.Find("MontantBois").GetComponent<Text>().text = "Bois: " + Joueur.J1.Ress_bois;
+        transform.Find("MontantPop").GetComponent<Text>().text = "Population: " + Joueur.J1.Ress_population+"/200";
     }
 }
