@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ActionsBatiment.cs" />
     <Compile Include="Assets\Gaia\Scripts\Attributes\PreviewTextureAttribute.cs" />
     <Compile Include="Assets\Gaia\Scripts\ExtensionSystem\Compatible\AQUASWaterSet.cs" />
     <Compile Include="Assets\Gaia\Scripts\ExtensionSystem\Compatible\CountrySidePack.cs" />
@@ -230,6 +231,7 @@
     <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_TransformMotion.cs" />
     <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_UVAnimation.cs" />
     <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\Scripts\RFX4_UVScroll.cs" />
+    <Compile Include="Assets\MessagesToPlayer.cs" />
     <Compile Include="Assets\scfr.cs" />
     <Compile Include="Assets\scripts\Arbre.cs" />
     <Compile Include="Assets\scripts\Archer.cs" />
@@ -245,6 +247,7 @@
     <Compile Include="Assets\scripts\ConstructionManager.cs" />
     <Compile Include="Assets\scripts\ConstructionPossible.cs" />
     <Compile Include="Assets\scripts\ControleurJeu.cs" />
+    <Compile Include="Assets\scripts\CreationBatiment.cs" />
     <Compile Include="Assets\scripts\DeplacementCamera.cs" />
     <Compile Include="Assets\scripts\Fantassin.cs" />
     <Compile Include="Assets\scripts\FenetreRessource.cs" />
@@ -270,6 +273,9 @@
     <Compile Include="Assets\scripts\unit.cs" />
     <Compile Include="Assets\scripts\Unite.cs" />
     <Compile Include="Assets\sphere.cs" />
+    <Compile Include="Assets\UltraMare\The Best Flag and Banner System\Scripts\CreateNewMaterial.cs" />
+    <Compile Include="Assets\UltraMare\The Best Flag and Banner System\Scripts\SwitchCamera.cs" />
+    <Compile Include="Assets\UltraMare\The Best Flag and Banner System\Scripts\SymbolController.cs" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\RFX4_CutoutBorderMobile.shader" />
     <None Include="Assets\KriptoFX\Realistic Effects Pack v4\Shaders\Portal\RFX4_PortalSky.shader" />
     <None Include="Assets\Gaia\3rd Party Samplers\NatureManufacture\_Readme.txt" />
