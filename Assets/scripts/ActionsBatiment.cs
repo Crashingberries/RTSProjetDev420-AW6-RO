@@ -10,7 +10,7 @@ public class ActionsBatiment : MonoBehaviour
     public GameObject raliement;
     private GameObject raliement2; // COPIE de raliement
 
-    private int pourcentage;
+    private int pourcentage=0;
 
     private bool placer_ptdr;
 
@@ -32,7 +32,7 @@ public class ActionsBatiment : MonoBehaviour
     private float lancier_debut;
     private float chevalier_debut;
 
-    public GameObject[] commandes;
+    public List<GameObject> commandes;
 
     private GameObject _commande;
 
@@ -57,8 +57,11 @@ public class ActionsBatiment : MonoBehaviour
                 Destroy(raliement2);
             }
         }
-        if (commandes.Length > 0) { EnCommande(); }
-
+        if (commandes.Count > 0)
+        {
+            Debug.Log(commandes[0].GetComponent<Text>().text);
+            EnCommande();
+        }
         //if(ouvrier_commande > 0)
         //{
         //    if(ouvrier_pour >= 100)
@@ -121,15 +124,20 @@ public class ActionsBatiment : MonoBehaviour
             if (pourcentage >= 100)
             {
                 pourcentage = 0;
-                //AnnulerCommandeUnit(commandes[1]);
-                //Instantiate(unit, pos, t_batiment.rotation);
+                CreerUnit(commandes[0]);
+                commandes.RemoveAt(0);
+                commandes.TrimExcess();
+                Debug.Log(commandes.Count);
+
             }
             else
             {
-                pourcentage++;
-                commandes[commandes.Length+1].AddComponent<Text>();
-                // Text tmp = ListeCommande[commandes.Length].GetComponent<Text>();
-                // tmp.text = pourcentage + "%\nx" + "Test";
+                if (commandes[0].GetComponent<Text>() == null) { commandes[0].AddComponent<Text>(); }
+                //pourcentage++;
+                Text tmp = commandes[0].GetComponent<Text>();
+                commandes.FindAll(gameObject => gameObject == commandes[0]);
+                List<GameObject> ListeUnite = commandes.FindAll(unit => unit == commandes[0]);
+                tmp.text = pourcentage + "%\nx" + ListeUnite.Count;
             }
         }
     }
@@ -164,7 +172,7 @@ public class ActionsBatiment : MonoBehaviour
     }
     public void CommanderUnit(GameObject Unit)
     {
-        commandes[commandes.Length+1] = Unit;
+        commandes.Add(Unit);
     }
 
     //public void CommanderUnit(GameObject commande)
