@@ -10,7 +10,7 @@ public class ActionsBatiment : MonoBehaviour
     public GameObject raliement;
     private GameObject raliement2; // COPIE de raliement
 
-    private int pourcentage=0;
+    private int pourcentage = 0;
 
     private bool placer_ptdr;
 
@@ -59,7 +59,7 @@ public class ActionsBatiment : MonoBehaviour
         }
         if (commandes.Count > 0)
         {
-            Debug.Log(commandes[0].GetComponent<Text>().text);
+            //Debug.Log(commandes[0].GetComponent<Text>().text);
             EnCommande();
         }
         //if(ouvrier_commande > 0)
@@ -123,24 +123,38 @@ public class ActionsBatiment : MonoBehaviour
 
             if (pourcentage >= 100)
             {
+                string nomTmp = commandes[0].name;
                 pourcentage = 0;
                 CreerUnit(commandes[0]);
                 commandes.RemoveAt(0);
                 commandes.TrimExcess();
+                UpdateTextButton(nomTmp);
+                CacherBoutton(nomTmp);
                 Debug.Log(commandes.Count);
 
             }
             else
             {
-                if (commandes[0].GetComponent<Text>() == null) { commandes[0].AddComponent<Text>(); }
-                //pourcentage++;
-                Text tmp = commandes[0].GetComponent<Text>();
-                commandes.FindAll(gameObject => gameObject == commandes[0]);
-                List<GameObject> ListeUnite = commandes.FindAll(unit => unit == commandes[0]);
-                tmp.text = pourcentage + "%\nx" + ListeUnite.Count;
+                pourcentage++;
+                UpdateTextButton(commandes[0].name);
             }
         }
     }
+    public void CacherBoutton(string Nom)
+    {
+        if (commandes.FindAll(unit => unit.name == Nom).Count == 0) { GameObject.Find("btn_comCreate" + Nom).SetActive(false); }
+        
+    }
+    public void UpdateTextButton(string texte)
+    {
+        int valeurprc = 0;
+        if (commandes.Count==0 || texte == commandes[0].name)
+        {
+            valeurprc = pourcentage;
+        }
+        GameObject.Find("btn_comCreate" + texte).GetComponent<UnityEngine.UI.Button>().GetComponentInChildren<Text>().text = valeurprc + " %\nx" + commandes.FindAll(unit => unit.name == texte).Count;
+    }
+        
 
     public void PlacerPTDR()
     {
@@ -173,6 +187,7 @@ public class ActionsBatiment : MonoBehaviour
     public void CommanderUnit(GameObject Unit)
     {
         commandes.Add(Unit);
+        UpdateTextButton(Unit.name);
     }
 
     //public void CommanderUnit(GameObject commande)
