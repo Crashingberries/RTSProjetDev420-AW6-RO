@@ -66,7 +66,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4099715329672136
 Transform:
   m_ObjectHideFlags: 1
@@ -74,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1610541266856556}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 81.98392, y: 0.00063616276, z: 405.0831}
+  m_LocalPosition: {x: 88.81935, y: 0.00063616276, z: 403.9364}
   m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children:
   - {fileID: 4800880893758426}
@@ -123,7 +123,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: e9af2b2b024e6234fad1aca7e4bea89a, type: 2}
+  - {fileID: 2100000, guid: 35b1f4f4f27dfb04cb009f1fadb1667e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
