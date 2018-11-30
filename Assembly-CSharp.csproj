@@ -134,7 +134,6 @@
      <Compile Include="Assets\scripts\Lancier.cs" />
      <Compile Include="Assets\scripts\Mage.cs" />
      <Compile Include="Assets\scripts\MageMonte.cs" />
-     <Compile Include="Assets\scripts\MenuSetup.cs" />
      <Compile Include="Assets\scripts\ouvrier.cs" />
      <Compile Include="Assets\scripts\Partie.cs" />
      <Compile Include="Assets\scripts\PlacementBatiment.cs" />
@@ -143,7 +142,6 @@
      <Compile Include="Assets\scripts\position.cs" />
      <Compile Include="Assets\scripts\Recolte.cs" />
      <Compile Include="Assets\scripts\RecolteBois.cs" />
-     <Compile Include="Assets\scripts\RectangleSelection.cs" />
      <Compile Include="Assets\scripts\RessourceDuJeu.cs" />
      <Compile Include="Assets\scripts\ressourcenaturelle.cs" />
      <Compile Include="Assets\scripts\RessourceNode.cs" />

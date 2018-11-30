@@ -18,7 +18,7 @@ namespace RTS
         public Transform sphere3;
         public Transform sphere4;
         */
-       
+        
 
         public Material matNormal;
         public Material matHighlight;
@@ -27,7 +27,7 @@ namespace RTS
         [System.NonSerialized]
         public List<GameObject> uniteSelectionnees = new List<GameObject>();
         public List<GameObject> _uniteSelectionnees { get { return uniteSelectionnees; } }
-
+        public MenuSetup MS;
         GameObject highlightCetteUnite;
 
         float delais = 0.15f;
@@ -42,6 +42,7 @@ namespace RTS
         
         void Start()
         {
+            MS = GameObject.Find("MenuSelect").GetComponent<MenuSetup>();
             //désactive le rectangle
             rectangleSelectionTrans.gameObject.SetActive(false);
         }
@@ -84,6 +85,7 @@ namespace RTS
                     rectangleSelectionTrans.gameObject.SetActive(false);
 
                     uniteSelectionnees.Clear();
+                   
 
                     for (int i = 0; i < toutesUnites.Length; i++)
                     {
@@ -93,8 +95,10 @@ namespace RTS
                             uniteActuelle.GetComponent<MeshRenderer>().material = matSelection;
                             print(uniteActuelle.name);
                             uniteSelectionnees.Add(uniteActuelle);
-                           // MenuSetup.UnitIconTextures.Add(Recolte.);
-;                       }
+                            MS.UpdateGui = true;
+                          
+
+                            ;                       }
                         else
                         {
                             uniteActuelle.GetComponent<MeshRenderer>().material = matNormal;
@@ -144,6 +148,7 @@ namespace RTS
                 AfficherRectangle();
                 if (aCreeRectangle)
                 {
+                    
                     for (int i = 0; i < toutesUnites.Length; i++)
                     {
                         
@@ -158,6 +163,8 @@ namespace RTS
                             uniteActuelle.GetComponent<MeshRenderer>().material = matNormal;
                         }
                     }
+                   
+               
                 }
             }
         }
@@ -210,6 +217,7 @@ namespace RTS
                     }
                 }
             }
+         
         }
 
         bool EstDansPolygone(Vector3 positionUnite)
