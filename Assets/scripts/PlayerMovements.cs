@@ -27,10 +27,10 @@ public class PlayerMovements : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButton(CLIC_DROIT))
+		/*if (Input.GetMouseButton(CLIC_DROIT))
         {
 			SetPositionCible();
-        }
+        }*/
 		if (enMouvement)
         {
 			BougerJoueur();
@@ -78,7 +78,7 @@ public class PlayerMovements : MonoBehaviour {
         animator.SetBool("Attaque", false);
     }
 
-    void SetPositionCible()
+    public void SetPositionCible()
     {
         Plane plane = new Plane(Vector3.up, transform.position);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

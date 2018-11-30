@@ -1,42 +1,144 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AttaqueManager : MonoBehaviour {
-    public bool alerte;
-    public int rayon;
-    public int portee;
 
-    //public Rigidbody cible;
-    GameObject[] ennemis;
+    public GameObject attaquant;
+    public GameObject cible;
+    private GameObject cibleAReparer;
+    public Slider PvBar;
 
-    public HealthManager pv_ennemi;
-    public Rigidbody r_attaquant;
+    public int ATTAQUE;
+    public int RANGE;
+    public float VIT_ATTAQUE;
+    public bool ALERTE;
+    public bool BATIMENT;
+
+    private Collider[] ennemis;
+
+    private HealthManager pv_ennemi;
+    private Rigidbody r_attaquant;
     public AudioSource _se_degats;
     public AudioSource _se_detruit;
-    bool detruit = false;
-    public float vitesseAttaque = (float)1.5;
+    private bool detruit = false;
     private float nextfire;
-    Animator anim;
+
+    private bool placer_cible_reparer = false;
+    private bool en_reparation = false;
+    public GameObject icon_reparer;
+
+    public Animator anim;
 
     // Use this for initialization
     void Start () {
-        //pv_ennemi = GameObject.Find("Slider").GetComponent<HealthManager>();
-        //cible = GameObject.Find("Ennemi").GetComponent<Rigidbody>();
-        rayon = 100;
-        portee = 10;
-        alerte = true;
-        anim = GameObject.Find("Allie").GetComponent<Animator>();
-        r_attaquant = GameObject.Find("Allie").GetComponent<Rigidbody>();
+        anim = attaquant.GetComponent<Animator>();
+        r_attaquant = attaquant.GetComponent<Rigidbody>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        ennemis = GameObject.FindGameObjectsWithTag("Ennemi");
-        
-        Alerter();
-        IsInRange();
+        UpdateCilblesPossibles();
+        if (ALERTE) { Attaquer(GetCible()); }
+        //for (int i = 0; i < ennemis.Length; i++)
+        //{
+        //    if (ennemis[i] != null) { print(ennemis[i].gameObject); }
+        //}
+
+        if (placer_cible_reparer)
+        {
+            icon_reparer.transform.position = GetMousePosition();
+        }
     }
+
+    public void UpdateCilblesPossibles()
+    {
+        ennemis = Physics.OverlapSphere(attaquant.transform.position, RANGE);
+        for (int i = 0; i < ennemis.Length; i++)
+        {
+            if (ennemis[i].gameObject.GetComponent<AttaqueManager>() == null || ennemis[i].gameObject == attaquant)
+            {
+                ennemis[i] = null;
+            }
+        }
+    }
+
+    public AttaqueManager GetCible()
+    {
+        for (int i = 0; i < ennemis.Length; i++)
+        {
+            AttaqueManager am_cible = null;
+            if (ennemis[i] != null)
+            {
+                am_cible = ennemis[i].gameObject.GetComponent<AttaqueManager>();
+            }
+            if (am_cible != null)
+            {
+                cible = ennemis[i].gameObject;
+                return am_cible;
+            }
+        }
+        return null;
+    }
+
+    public void Attaquer(AttaqueManager _cible)
+    {
+        if (_cible != null)
+        {
+            anim.SetBool("Attaque", true);
+            anim.SetBool("Attaque", false);
+            if (Time.time > nextfire)
+            {
+                //print("Attaque : " + cible.name + ", PV : " + _cible.PvBar.name);
+                nextfire = Time.time + VIT_ATTAQUE;
+
+                if (_cible.PvBar.value >= 0)
+                {
+                    anim.SetBool("Attaque", true);
+                    // _se_degats.Play();
+                    if (true)
+                    {
+                        _cible.PvBar.value -= ATTAQUE;
+                    }
+                    cible.GetComponent<Animator>().SetTrigger("SubirDegat");
+                    if (_cible.PvBar.value <= 0)
+                    {
+                        _cible.GetComponent<Animator>().SetTrigger("EstMort");
+                        Destroy(GameObject.Find(_cible.PvBar.name));
+                        Destroy(cible);
+                    }
+                }
+            }
+        }
+    }
+
+    public void PlacerCibleAReparer()
+    {
+        if (placer_cible_reparer) { placer_cible_reparer = false; icon_reparer.SetActive(false); }
+        else { placer_cible_reparer = true; icon_reparer.SetActive(true); }
+    }
+
+
+
+
+
+
+
+    private Vector3 GetMousePosition()
+    {
+        Vector3 pos = new Vector3();
+        Plane plane = new Plane(Vector3.up, transform.position);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        float point = 0f;
+        if (plane.Raycast(ray, out point))
+        {
+            pos = ray.GetPoint(point);
+        }
+        return pos;
+    }
+
+    /* NON UTILISÉ POUR LE MOMENT */
 
     public void Alerter()
     {
@@ -73,59 +175,5 @@ public class AttaqueManager : MonoBehaviour {
         }
     }
 
-    public void IsInRange()
-    {
-        for (int i=0; i<ennemis.Length; i++)
-        {
-
-            Rigidbody cible = ennemis[i].GetComponent<Rigidbody>();
-            Animator ennemi_anim= ennemis[i].GetComponent<Animator>();
-            if ((r_attaquant.position.x - cible.position.x <= portee && r_attaquant.position.x - cible.position.x >= -portee) && (r_attaquant.position.z - cible.position.z <= portee && r_attaquant.position.z - cible.position.z >= -portee))
-            {
- 
-                Attaquer(ennemis[i]);
-                break;
-
-            }
-            else
-            {
-                
-                ennemi_anim.ResetTrigger("SubirDegat");
-            }
-        }
-    }
-
-    public void Attaquer(GameObject cible)
-    {
-        anim.SetBool("Attaque", true);
-        HealthManager hm_cible = cible.GetComponentInChildren<HealthManager>();
-        anim.SetBool("Attaque", false);
-        if (Time.time > nextfire)
-        {
-            print("Attaque : " + cible.name + ", PV : " + hm_cible.PvBar.name);
-            nextfire = Time.time + vitesseAttaque;
-            
-            if (hm_cible.PvBar.value != 0)
-            {
-                anim.SetBool("Attaque", true);
-                // _se_degats.Play();
-                hm_cible.SubirDegats(15);
-                cible.GetComponent<Animator>().SetTrigger("SubirDegat");
-            }
-            else
-            {
-                if (!detruit)
-                {
-                    //  _se_detruit.Play();
-                    detruit = true;
-                }
-                else
-                {
-                    cible.GetComponent<Animator>().SetTrigger("EstMort");
-                    Destroy(cible);
-                }
-            }
-        }
-
-    }
+    
 }

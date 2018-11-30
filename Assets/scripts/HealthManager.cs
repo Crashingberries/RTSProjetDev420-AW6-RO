@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour {
 
-    public static int PVcourant=0;
+    public static int PVcourant;
     public Slider PvBar;
+    public GameObject construction;
 
     // Use this for initialization
     void Start ()
     {
-       // PvBar = GetComponent<Slider>();
-        //PVcourant = (int)PvBar.maxValue;
+        PVcourant = (int)PvBar.maxValue;
     }
 
     public void SubirDegats(int degats)
@@ -23,6 +23,8 @@ public class HealthManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        //PvBar.value = PVcourant;
+        GetComponentInChildren<Text>().text = PvBar.value + "/" + PvBar.maxValue;
+        Vector3 pos = construction.transform.position;
+        PvBar.transform.position = Camera.main.WorldToScreenPoint(new Vector3(pos.x+3, pos.y, pos.z+8));
     }
 }

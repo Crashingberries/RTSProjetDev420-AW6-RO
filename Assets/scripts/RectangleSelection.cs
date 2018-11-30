@@ -37,7 +37,10 @@ namespace RTS
         bool aCreeRectangle;
 
         Vector3 hautGauche, hautDroit, basGauche, basDroit;
+
         
+        const int CLIC_DROIT = 1;
+
         void Start()
         {
             //désactive le rectangle
@@ -49,6 +52,10 @@ namespace RTS
             toutesUnites= GameObject.FindGameObjectsWithTag("Friendly");
             SelectionnerUnites();
             HighlightUnite();
+            if (Input.GetMouseButton(CLIC_DROIT))
+            {
+                MouvementUnite();
+            }
         }
 
         void SelectionnerUnites()
@@ -89,9 +96,12 @@ namespace RTS
                         if (EstDansPolygone(uniteActuelle.transform.position))
                         {
                             uniteActuelle.GetComponent<MeshRenderer>().material = matSelection;
-                            print(uniteActuelle.name);
-                            uniteSelectionnees.Add(uniteActuelle);
-;                       }
+                            //print(uniteActuelle.name);
+                            if (uniteActuelle.name != "Quad")
+                            {
+                                uniteSelectionnees.Add(uniteActuelle);
+                            }
+                        }
                         else
                         {
                             uniteActuelle.GetComponent<MeshRenderer>().material = matNormal;
@@ -306,6 +316,14 @@ namespace RTS
                 aCreeRectangle = true;
             }
             
+        }
+        public void MouvementUnite()
+        {
+            foreach (GameObject element in uniteSelectionnees)
+            {
+                print(element.name);
+                element.GetComponent<PlayerMovements>().SetPositionCible();
+            }
         }
     }
 }
