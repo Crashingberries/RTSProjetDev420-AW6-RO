@@ -153,7 +153,6 @@ GameObject:
   - component: {fileID: 4831335935913716}
   - component: {fileID: 33328365816336474}
   - component: {fileID: 23694684685744386}
-  - component: {fileID: 64933090101785562}
   m_Layer: 9
   m_Name: Quad
   m_TagString: Untagged
@@ -384,7 +383,6 @@ GameObject:
   - component: {fileID: 4614287835513048}
   - component: {fileID: 33032890231747092}
   - component: {fileID: 23442607069853424}
-  - component: {fileID: 64984308093300948}
   m_Layer: 10
   m_Name: Minimap
   m_TagString: Minimap
@@ -2366,7 +2364,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 35b1f4f4f27dfb04cb009f1fadb1667e, type: 2}
+  - {fileID: 2100000, guid: 1a351eecdfb5f8249a536379bd799e9e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3374,34 +3372,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!64 &64933090101785562
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1169127893751620}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &64984308093300948
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1363223950301436}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &65797394332462372
 BoxCollider:
   m_ObjectHideFlags: 1

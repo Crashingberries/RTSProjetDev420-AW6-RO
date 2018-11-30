@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 
 
-    public class Joueur
+    public class Joueur:MonoBehaviour
     {
     public static Joueur J1 = new Joueur(1,"Joueur 1");
     public static Joueur J2 = new Joueur(2,"Joueur 2");
@@ -36,8 +36,8 @@ using UnityEngine.UI;
         {
             Num = _num;
             Nom = _nom;
-            Ress_bois = 160;
-            Ress_or = 5000;
+            Ress_bois = 100;
+            Ress_or = 100;
             Ress_mana = 0;
             Ress_population = 10;
             Vaincu = false;
@@ -122,6 +122,6 @@ using UnityEngine.UI;
         }
     private void Start()
     {
-        ;
+        
     }
 }

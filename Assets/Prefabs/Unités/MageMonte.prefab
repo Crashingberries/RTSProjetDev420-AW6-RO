@@ -3640,7 +3640,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &65336618261775582
 BoxCollider:
@@ -3663,7 +3663,7 @@ Animator:
   m_GameObject: {fileID: 1169214439299592}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 26b0b465439dcd84cb4971737ab4b8ca, type: 3}
-  m_Controller: {fileID: 9100000, guid: 612bd05174dee254182dfca0ac870a8f, type: 2}
+  m_Controller: {fileID: 9100000, guid: c7caa34b15a7ad146985cd67464d3e3c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

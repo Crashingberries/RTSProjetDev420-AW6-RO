@@ -124,7 +124,6 @@ GameObject:
   - component: {fileID: 4083641230991820}
   - component: {fileID: 33288262641373362}
   - component: {fileID: 23600043328805022}
-  - component: {fileID: 64689967566564686}
   m_Layer: 9
   m_Name: Quad
   m_TagString: Batiment
@@ -176,7 +175,6 @@ GameObject:
   - component: {fileID: 4888748522006262}
   - component: {fileID: 33129862880250186}
   - component: {fileID: 23298860538050996}
-  - component: {fileID: 64652958832769206}
   m_Layer: 10
   m_Name: Minimap
   m_TagString: Minimap
@@ -408,7 +406,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 35b1f4f4f27dfb04cb009f1fadb1667e, type: 2}
+  - {fileID: 2100000, guid: 1a351eecdfb5f8249a536379bd799e9e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -674,34 +672,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!64 &64652958832769206
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1918767369288180}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &64689967566564686
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1779681133230006}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &65805349405878528
 BoxCollider:
   m_ObjectHideFlags: 1

@@ -26,7 +26,7 @@ public class ConstructionPossible : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Batiment"|| other.tag == "MineOr"|| other.tag == "Friendly"|| other.tag == "Ennemi")
+        if (other.tag == "Batiment"|| other.tag == "MineOr"|| other.tag == "Friendly"|| other.tag == "Ennemi" || other.tag=="Arbre")
         {
             rendTest.sharedMaterial = shader2;
             colliders.Add(other);
@@ -34,7 +34,7 @@ public class ConstructionPossible : MonoBehaviour {
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Batiment"|| other.tag == "MineOr"|| other.tag == "Friendly"|| other.tag == "Ennemi")
+        if (other.tag == "Batiment"|| other.tag == "MineOr"|| other.tag == "Friendly"|| other.tag == "Ennemi" || other.tag == "Arbre")
         {
             colliders.Remove(other);
             if (colliders.Count < 1)

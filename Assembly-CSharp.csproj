@@ -241,6 +241,7 @@
     <Compile Include="Assets\scripts\Base.cs" />
     <Compile Include="Assets\scripts\Batiment.cs" />
     <Compile Include="Assets\scripts\Caserne.cs" />
+    <Compile Include="Assets\scripts\CaserneAction.cs" />
     <Compile Include="Assets\scripts\Catapulte.cs" />
     <Compile Include="Assets\scripts\Cavalier.cs" />
     <Compile Include="Assets\scripts\Construction.cs" />
@@ -257,8 +258,9 @@
     <Compile Include="Assets\scripts\GestionnaireBatiment.cs" />
     <Compile Include="Assets\scripts\Habitation.cs" />
     <Compile Include="Assets\scripts\HealthManager.cs" />
-    <Compile Include="Assets\scripts\joueur.cs" />
+    <Compile Include="Assets\scripts\Joueur.cs" />
     <Compile Include="Assets\scripts\Mage.cs" />
+    <Compile Include="Assets\scripts\Minerai.cs" />
     <Compile Include="Assets\scripts\ouvrier.cs" />
     <Compile Include="Assets\scripts\Partie.cs" />
     <Compile Include="Assets\scripts\PlacementBatiment.cs" />
@@ -267,7 +269,7 @@
     <Compile Include="Assets\scripts\Recolte.cs" />
     <Compile Include="Assets\scripts\RectangleSelection.cs" />
     <Compile Include="Assets\scripts\RessourceDuJeu.cs" />
-    <Compile Include="Assets\scripts\Ressourcenaturelle.cs" />
+    <Compile Include="Assets\scripts\ressourcenaturelle.cs" />
     <Compile Include="Assets\scripts\RessourceNode.cs" />
     <Compile Include="Assets\scripts\SelectionSquare.cs" />
     <Compile Include="Assets\scripts\unit.cs" />

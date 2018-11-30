@@ -11,6 +11,7 @@ public class Recolte : MonoBehaviour {
     private float vitesse = 10;
 
     private int compteur;
+    private GameObject ressource;
 
     Animator anim;
 
@@ -31,7 +32,6 @@ public class Recolte : MonoBehaviour {
     void Start()
     {
         anim = GetComponent<Animator>();
-        positionCible = transform.position;
         rbody = GetComponent<Rigidbody>();
 
     }
@@ -41,7 +41,6 @@ public class Recolte : MonoBehaviour {
         {
             if (Time.time > nextActionTime)
             {
-                print("incrémentation");
                 nextActionTime = Time.time + period;
                 ActionRecolte();
             }
@@ -51,11 +50,16 @@ public class Recolte : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
 
-        if (collision.gameObject.name == "MineOr")
+        if (collision.gameObject.tag == "MineOr")
         {
-            anim.SetBool("Attaque", true);
-            enRecolte = true;
-            print("dans le trigger");
+
+            StartAnimation();
+            ressource = collision.gameObject;
+        }
+        else if (collision.gameObject.tag == "Arbre")
+        {
+            StartAnimation();
+            ressource = collision.gameObject;
         }
 
     }
@@ -63,31 +67,52 @@ public class Recolte : MonoBehaviour {
     private void OnCollisionExit(Collision collision)
     {
 
-        anim.SetBool("Attaque",false);
-        //print("sorti du trigger");
-        enRecolte = false;
+        StopAnimation();
 
     }
 
-   /* private void InitializeTimer()
-    {
-        compteur = 0;
-        ControleAugmentation.Interval = 2000;
-        ControleAugmentation.Enabled = true;
-        ControleAugmentation.Elapsed += new ElapsedEventHandler(ActionRecolte);
-    }*/
+    /* private void InitializeTimer()
+     {
+         compteur = 0;
+         ControleAugmentation.Interval = 2000;
+         ControleAugmentation.Enabled = true;
+         ControleAugmentation.Elapsed += new ElapsedEventHandler(ActionRecolte);
+     }*/
 
     public void ActionRecolte()
     {
-        RessourceDuJeu.SetMontantOr(1);
-        compteur++;
-        if (compteur >= 5)
+        if (ressource.tag=="MineOr")
         {
-            enRecolte = false;
-            anim.SetBool("Attaque", false);
-            Destroy(GameObject.FindGameObjectWithTag("MineOr"));
-
+            try
+            {
+                ressource.GetComponent<Minerai>().Recolte();
+            }
+            catch
+            {
+                StopAnimation();
+            }
         }
+        else if (ressource.tag=="Arbre")
+        {
+            try
+            {
+                ressource.GetComponent<Arbre>().Recolte();
+            }
+            catch
+            {
+                StopAnimation();
+            }
+        }
+    }
+    public void StopAnimation()
+    {
+        anim.SetBool("Attaque", false);
+        enRecolte = false;
+    }
+    public void StartAnimation()
+    {
+        anim.SetBool("Attaque", true);
+        enRecolte = true;
     }
 
 

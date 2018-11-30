@@ -66,10 +66,13 @@ public class PlacementBatiment : MonoBehaviour {
 
     IEnumerator EnConstruction(Transform construction,Vector3 placement)
     {
+        Transform f = batimentActuel.Find("Canvas");
         for (float i = 10; i >= 0; i=i-0.3f)
         {
             construction.transform.position = new Vector3(placement.x, placement.y-i, placement.z);
             yield return new WaitForSeconds(0.2f);
         }
+        f.gameObject.SetActive(true);
+
     }
 }
