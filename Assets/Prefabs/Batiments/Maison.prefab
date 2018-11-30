@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 65941042712937862}
   - component: {fileID: 114065910515102796}
   - component: {fileID: 65805349405878528}
+  - component: {fileID: 114627424488796000}
   m_Layer: 9
   m_Name: Maison
   m_TagString: Batiment
@@ -247,7 +248,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1031525136478014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 88.85539, y: 0.49582005, z: 383.24127}
+  m_LocalPosition: {x: 158.59232, y: 0, z: 360.40915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4020826197409198}
@@ -406,7 +407,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 1a351eecdfb5f8249a536379bd799e9e, type: 2}
+  - {fileID: 2100000, guid: 4d7696a380932264bafc858c46d37cd1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -729,3 +730,18 @@ MonoBehaviour:
   quad: {fileID: 1779681133230006}
   shader1: {fileID: 2100000, guid: 2587740353bcd804db355836337c71d2, type: 2}
   shader2: {fileID: 2100000, guid: 7a31c6ace5b765545944137bec02b220, type: 2}
+--- !u!114 &114627424488796000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1031525136478014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa3a8d6e906aeb478da08949b20f739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t_batiment: {fileID: 0}
+  ptdr: {x: 0, y: 0, z: 0}
+  raliement: {fileID: 0}
+  commandes: []

@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 114521590098270318}
   - component: {fileID: 136268211608504636}
   - component: {fileID: 136087896808833258}
+  - component: {fileID: 114451855015334384}
   m_Layer: 9
   m_Name: Tour
   m_TagString: Batiment
@@ -280,7 +281,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1479318506779902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 114.23868, y: 0, z: 383.85962}
+  m_LocalPosition: {x: 194.95969, y: 0, z: 356.34067}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4605800190422656}
@@ -511,7 +512,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 1a351eecdfb5f8249a536379bd799e9e, type: 2}
+  - {fileID: 2100000, guid: 4d7696a380932264bafc858c46d37cd1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -690,6 +691,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114451855015334384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1479318506779902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa3a8d6e906aeb478da08949b20f739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t_batiment: {fileID: 0}
+  ptdr: {x: 0, y: 0, z: 0}
+  raliement: {fileID: 0}
+  commandes: []
 --- !u!114 &114521590098270318
 MonoBehaviour:
   m_ObjectHideFlags: 1

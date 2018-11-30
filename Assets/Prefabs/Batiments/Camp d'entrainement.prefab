@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114784288202741706}
   - component: {fileID: 54974747156011998}
   - component: {fileID: 65874110293057348}
+  - component: {fileID: 114788337539707884}
   m_Layer: 9
   m_Name: Camp d'entrainement
   m_TagString: Batiment
@@ -72,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1368082034674602}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 123.88465, y: 0, z: 412.6534}
+  m_LocalPosition: {x: 91.96472, y: 0, z: 337.0904}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 4286911794764142}
@@ -121,7 +122,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 1a351eecdfb5f8249a536379bd799e9e, type: 2}
+  - {fileID: 2100000, guid: 4d7696a380932264bafc858c46d37cd1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -274,3 +275,18 @@ MonoBehaviour:
   quad: {fileID: 1629295716296268}
   shader1: {fileID: 2100000, guid: 2587740353bcd804db355836337c71d2, type: 2}
   shader2: {fileID: 2100000, guid: 7a31c6ace5b765545944137bec02b220, type: 2}
+--- !u!114 &114788337539707884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1368082034674602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa3a8d6e906aeb478da08949b20f739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t_batiment: {fileID: 0}
+  ptdr: {x: 0, y: 0, z: 0}
+  raliement: {fileID: 0}
+  commandes: []

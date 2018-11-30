@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 135064418744015866}
   - component: {fileID: 54176122559563842}
   - component: {fileID: 136125205033553574}
+  - component: {fileID: 114260351942919422}
   m_Layer: 0
   m_Name: MineOr
   m_TagString: MineOr
@@ -59,7 +60,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: e431c3d60bc32094b97a526526e1bcfc, type: 2}
+  - {fileID: 2100000, guid: 6a92c641f999b0548882a50604f218fa, type: 2}
   - {fileID: 2100000, guid: beed9b556ca684d4f91384f69c2c6941, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -102,6 +103,18 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &114260351942919422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1624579873694926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7331a39d50cab34a981f7bdb49a6ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ressources: 300
 --- !u!135 &135064418744015866
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 114971132232295312}
   - component: {fileID: 54673650581244530}
   - component: {fileID: 65159434756519780}
+  - component: {fileID: 114740983081858596}
   m_Layer: 9
   m_Name: "\xC9table"
   m_TagString: Batiment
@@ -678,7 +679,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1220656327252200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 172.00098, y: 0, z: 407.82788}
+  m_LocalPosition: {x: 161.55165, y: 0.00000047683716, z: 391.31583}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
   - {fileID: 4574521477079894}
@@ -1330,7 +1331,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 1a351eecdfb5f8249a536379bd799e9e, type: 2}
+  - {fileID: 2100000, guid: 4d7696a380932264bafc858c46d37cd1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1679,6 +1680,21 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &114740983081858596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1220656327252200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa3a8d6e906aeb478da08949b20f739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t_batiment: {fileID: 0}
+  ptdr: {x: 0, y: 0, z: 0}
+  raliement: {fileID: 0}
+  commandes: []
 --- !u!114 &114971132232295312
 MonoBehaviour:
   m_ObjectHideFlags: 1
