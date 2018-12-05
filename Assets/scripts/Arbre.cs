@@ -15,12 +15,12 @@ public class Arbre : MonoBehaviour
     {
         if (ressources > 35)
         {
-            Joueur.J1.AjouterBois(35);
+            //Joueur.J1.AjouterBois(35);
             ressources -= 35;
         }
         else
         {
-            Joueur.J1.AjouterBois(ressources);
+            //Joueur.J1.AjouterBois(ressources);
             ressources = 0;
             Destroy(gameObject);
         }

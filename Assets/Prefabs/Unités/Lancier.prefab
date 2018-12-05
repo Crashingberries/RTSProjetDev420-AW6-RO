@@ -965,6 +965,7 @@ GameObject:
   - component: {fileID: 65394427432504918}
   - component: {fileID: 114406068146851572}
   - component: {fileID: 135080008272577156}
+  - component: {fileID: 114920071522579622}
   m_Layer: 0
   m_Name: Lancier
   m_TagString: Untagged
@@ -3145,6 +3146,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitesse: 15
+--- !u!114 &114920071522579622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1826152769515874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 64
+    i1: 133
+    i2: 214
+    i3: 239
+    i4: 88
+    i5: 77
+    i6: 46
+    i7: 4
+    i8: 25
+    i9: 201
+    i10: 246
+    i11: 211
+    i12: 199
+    i13: 133
+    i14: 241
+    i15: 165
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!135 &135080008272577156
 SphereCollider:
   m_ObjectHideFlags: 1

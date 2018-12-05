@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1524309426908902}
+  m_IsPrefabAsset: 1
+--- !u!1 &1524309426908902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4271209150451958}
+  - component: {fileID: 114213876287791736}
+  - component: {fileID: 114236508707922948}
+  m_Layer: 0
+  m_Name: Joueur
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4271209150451958
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524309426908902}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114213876287791736
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524309426908902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16f8f95fd32e1748b7020defbd5b71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraJ1: {fileID: 1527402342084352, guid: 781068e2e92a07b47b9d80aa95c9a9ba, type: 2}
+  cameraJ2: {fileID: 1264429532439374, guid: e497c6d1cc3268b42864fc178084418e, type: 2}
+  Num: 0
+  Nom: 
+  Couleur: blanc
+  Ress_bois: 0
+  Ress_or: 0
+  Ress_mana: 0
+  Ress_population: 0
+  Vaincu: 0
+  Vainqueur: 0
+--- !u!114 &114236508707922948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524309426908902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 239
+    i1: 16
+    i2: 229
+    i3: 37
+    i4: 56
+    i5: 236
+    i6: 35
+    i7: 180
+    i8: 235
+    i9: 205
+    i10: 52
+    i11: 73
+    i12: 176
+    i13: 111
+    i14: 227
+    i15: 247
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0

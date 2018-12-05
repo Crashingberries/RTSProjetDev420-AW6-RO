@@ -763,6 +763,7 @@ GameObject:
   - component: {fileID: 114479308404219898}
   - component: {fileID: 54181268273814688}
   - component: {fileID: 65797394332462372}
+  - component: {fileID: 114305662795252920}
   m_Layer: 9
   m_Name: UsineDeGuerre
   m_TagString: Batiment
@@ -3429,6 +3430,38 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &114305662795252920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1722271878122552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 210
+    i1: 39
+    i2: 36
+    i3: 21
+    i4: 38
+    i5: 199
+    i6: 75
+    i7: 132
+    i8: 155
+    i9: 230
+    i10: 181
+    i11: 14
+    i12: 247
+    i13: 109
+    i14: 19
+    i15: 120
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114479308404219898
 MonoBehaviour:
   m_ObjectHideFlags: 1

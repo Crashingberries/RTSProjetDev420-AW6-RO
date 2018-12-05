@@ -36,8 +36,8 @@ public class PlacementBatiment : MonoBehaviour {
                     RessourceDuJeu.SetMontantOr(-10);
                     batimentActuel.GetComponent<Collider>().isTrigger = false;
                     StartCoroutine(EnConstruction(batimentActuel, vecteurDefini));
-                    Joueur.J1.RetirerBois(50);
-                    print(Joueur.J1.Ress_bois);
+                    //Joueur.J1.RetirerBois(50);
+                   // print(Joueur.J1.Ress_bois);
                 }
 
             }
@@ -50,7 +50,7 @@ public class PlacementBatiment : MonoBehaviour {
         /*Pontentiel amelioration: Diviser la condition afin d'envoyer un message au Joueur
          *Prendre la bonne valeur de chaque consctruction (et non juste 50)
          */
-        if (constructionPossible.colliders.Count > 0  || Joueur.J1.Ress_bois<50)
+        if (constructionPossible.colliders.Count > 0  /*|| Joueur.J1.Ress_bois<50*/)
         {
             return false;
         }

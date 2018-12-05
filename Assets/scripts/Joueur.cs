@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 
 
-    public class Joueur:MonoBehaviour
+    public class Joueur:NetworkBehaviour
     {
-    public static Joueur J1 = new Joueur(1,"Joueur 1");
-    public static Joueur J2 = new Joueur(2,"Joueur 2");
+    public GameObject cameraJ1;
+    public GameObject cameraJ2;
     public int Num; //{ get; set; }
     public string Nom; //{ get; set; }
     public string Couleur;//{ get; set; }
@@ -19,13 +20,15 @@ using UnityEngine.UI;
     public bool Vaincu; //{ get; set; } // <- Si le joueur a perdu OU declare forfait
     public bool Vainqueur; //{ get; set; } // <- Si le joueur a gagne (il est le seul restant...)
 
+    
+
         public Joueur()
         {
             Num = 0;
             Nom = "";
             Couleur = "blanc";
-            Ress_bois = 0;
-            Ress_or = 0;
+            Ress_bois = 500;
+            Ress_or = 500;
             Ress_mana = 0;
             Ress_population = 0;
             Vaincu = false;
@@ -122,6 +125,13 @@ using UnityEngine.UI;
         }
     private void Start()
     {
-        
+        if (isServer)
+        {
+            Instantiate(cameraJ1);
+        }
+        else
+        {
+            Instantiate(cameraJ2);
+        }
     }
 }

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114784288202741706}
   - component: {fileID: 54974747156011998}
   - component: {fileID: 65874110293057348}
+  - component: {fileID: 114044104010535086}
   m_Layer: 9
   m_Name: Camp d'entrainement
   m_TagString: Batiment
@@ -259,6 +260,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4102364, y: 0.53522706, z: 2.7377243}
   m_Center: {x: 0.10647011, y: 0.02518189, z: 0.02130127}
+--- !u!114 &114044104010535086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1368082034674602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 224
+    i1: 35
+    i2: 157
+    i3: 101
+    i4: 22
+    i5: 177
+    i6: 16
+    i7: 148
+    i8: 24
+    i9: 13
+    i10: 59
+    i11: 74
+    i12: 148
+    i13: 74
+    i14: 7
+    i15: 181
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114784288202741706
 MonoBehaviour:
   m_ObjectHideFlags: 1

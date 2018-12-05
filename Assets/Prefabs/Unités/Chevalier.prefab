@@ -1224,6 +1224,7 @@ GameObject:
   - component: {fileID: 65592844675400104}
   - component: {fileID: 114913559752606502}
   - component: {fileID: 135432385801042930}
+  - component: {fileID: 114298532999234582}
   m_Layer: 0
   m_Name: Chevalier
   m_TagString: Untagged
@@ -3672,6 +3673,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114298532999234582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821272939385586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 196
+    i1: 59
+    i2: 110
+    i3: 30
+    i4: 178
+    i5: 203
+    i6: 188
+    i7: 116
+    i8: 25
+    i9: 100
+    i10: 209
+    i11: 147
+    i12: 52
+    i13: 0
+    i14: 173
+    i15: 111
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114913559752606502
 MonoBehaviour:
   m_ObjectHideFlags: 1

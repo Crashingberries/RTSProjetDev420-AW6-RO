@@ -116,7 +116,7 @@ public class ActionsBatiment : MonoBehaviour
     }
     public void CommanderUnit(GameObject Unit)
     {
-        if (Joueur.J1.Ress_bois >= 50)
+       /* if (Joueur.J1.Ress_bois >= 50)
         { 
             Joueur.J1.RetirerBois(50);
             commandes.Add(Unit);
@@ -127,7 +127,7 @@ public class ActionsBatiment : MonoBehaviour
             // MessagesToPlayer.PasAssezRessources(Joueur.J1.Ress_bois >= 50, true, true);
             if (commandes.FindAll(commandes=>commandes==Unit).Count==0) { GameObject.Find("btn_comCreate" + Unit.name).SetActive(false); }
             
-        }
+        }*/
         
     }
     public void AnnulerCommande(GameObject unit)
@@ -137,7 +137,7 @@ public class ActionsBatiment : MonoBehaviour
             commandes.RemoveAt(remove);
             UpdateTextButton(unit.name);
             CacherBoutton(unit.name);
-        Joueur.J1.AjouterBois(50);
+       // Joueur.J1.AjouterBois(50);
     }
 
     public void CreerUnit(GameObject Unit)

@@ -18,12 +18,12 @@ public class Minerai : MonoBehaviour {
     {
         if (Ressources>35)
         {
-            Joueur.J1.AjouterOr(35);
+           // Joueur.J1.AjouterOr(35);
             Ressources -= 35;
         }
         else
         {
-            Joueur.J1.AjouterOr(Ressources);
+          //  Joueur.J1.AjouterOr(Ressources);
             Ressources = 0;
             Destroy(gameObject);
         }

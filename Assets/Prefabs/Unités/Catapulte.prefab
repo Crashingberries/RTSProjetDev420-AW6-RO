@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 23277957794383762}
   - component: {fileID: 65407162172471288}
   - component: {fileID: 114160778678983528}
+  - component: {fileID: 114333907832373496}
   m_Layer: 0
   m_Name: Catapulte
   m_TagString: Friendly
@@ -632,6 +633,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitesse: 10
+--- !u!114 &114333907832373496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1669427438954630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 185
+    i1: 23
+    i2: 32
+    i3: 94
+    i4: 112
+    i5: 250
+    i6: 40
+    i7: 132
+    i8: 249
+    i9: 45
+    i10: 140
+    i11: 11
+    i12: 1
+    i13: 115
+    i14: 14
+    i15: 37
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!136 &136969729829434002
 CapsuleCollider:
   m_ObjectHideFlags: 1

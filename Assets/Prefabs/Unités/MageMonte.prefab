@@ -305,6 +305,7 @@ GameObject:
   - component: {fileID: 65336618261775582}
   - component: {fileID: 114705327807546436}
   - component: {fileID: 135488376999121494}
+  - component: {fileID: 114572225908183300}
   m_Layer: 0
   m_Name: MageMonte
   m_TagString: Untagged
@@ -3672,6 +3673,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114572225908183300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169214439299592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 130
+    i1: 117
+    i2: 9
+    i3: 222
+    i4: 208
+    i5: 47
+    i6: 63
+    i7: 100
+    i8: 216
+    i9: 85
+    i10: 209
+    i11: 69
+    i12: 90
+    i13: 162
+    i14: 56
+    i15: 240
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114705327807546436
 MonoBehaviour:
   m_ObjectHideFlags: 1

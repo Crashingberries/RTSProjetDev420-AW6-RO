@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 65941042712937862}
   - component: {fileID: 114065910515102796}
   - component: {fileID: 65805349405878528}
+  - component: {fileID: 114141526281589272}
   m_Layer: 9
   m_Name: Maison
   m_TagString: Batiment
@@ -729,3 +730,35 @@ MonoBehaviour:
   quad: {fileID: 1779681133230006}
   shader1: {fileID: 2100000, guid: 2587740353bcd804db355836337c71d2, type: 2}
   shader2: {fileID: 2100000, guid: 7a31c6ace5b765545944137bec02b220, type: 2}
+--- !u!114 &114141526281589272
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1031525136478014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 243
+    i1: 203
+    i2: 195
+    i3: 223
+    i4: 168
+    i5: 193
+    i6: 30
+    i7: 244
+    i8: 43
+    i9: 247
+    i10: 212
+    i11: 168
+    i12: 160
+    i13: 79
+    i14: 206
+    i15: 106
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0

@@ -952,6 +952,7 @@ GameObject:
   - component: {fileID: 65894586390331816}
   - component: {fileID: 114202472742020070}
   - component: {fileID: 135377363512801124}
+  - component: {fileID: 114642626396325752}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Friendly
@@ -3106,6 +3107,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitesse: 10
+--- !u!114 &114642626396325752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821469621697834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 153
+    i1: 100
+    i2: 39
+    i3: 130
+    i4: 242
+    i5: 33
+    i6: 238
+    i7: 36
+    i8: 155
+    i9: 125
+    i10: 13
+    i11: 138
+    i12: 107
+    i13: 192
+    i14: 106
+    i15: 49
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!135 &135377363512801124
 SphereCollider:
   m_ObjectHideFlags: 1

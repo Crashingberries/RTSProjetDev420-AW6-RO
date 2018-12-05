@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 114028647447643522}
   - component: {fileID: 114802725376195504}
   - component: {fileID: 135781311134799442}
+  - component: {fileID: 114633696556440722}
   m_Layer: 0
   m_Name: Ouvrier
   m_TagString: Friendly
@@ -3146,6 +3147,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitesse: 15
+--- !u!114 &114633696556440722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1225260397650220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 17
+    i1: 96
+    i2: 120
+    i3: 139
+    i4: 204
+    i5: 176
+    i6: 207
+    i7: 196
+    i8: 56
+    i9: 171
+    i10: 126
+    i11: 179
+    i12: 237
+    i13: 59
+    i14: 9
+    i15: 253
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114802725376195504
 MonoBehaviour:
   m_ObjectHideFlags: 1

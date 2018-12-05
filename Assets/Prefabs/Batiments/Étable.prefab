@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 114971132232295312}
   - component: {fileID: 54673650581244530}
   - component: {fileID: 65159434756519780}
+  - component: {fileID: 114161039839143120}
   m_Layer: 9
   m_Name: "\xC9table"
   m_TagString: Batiment
@@ -1679,6 +1680,38 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &114161039839143120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1220656327252200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 182
+    i1: 240
+    i2: 152
+    i3: 52
+    i4: 54
+    i5: 218
+    i6: 28
+    i7: 148
+    i8: 234
+    i9: 110
+    i10: 61
+    i11: 77
+    i12: 16
+    i13: 29
+    i14: 188
+    i15: 181
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114971132232295312
 MonoBehaviour:
   m_ObjectHideFlags: 1
