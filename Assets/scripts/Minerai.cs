@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Minerai : MonoBehaviour {
+public class Minerai : NetworkBehaviour {
 
     public int Ressources = 300;
     // Use this for initialization
@@ -12,22 +13,37 @@ public class Minerai : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
+        if (Input.GetKey(KeyCode.Q))
+        {
+            Recolte();
+        }
     }
     public void Recolte()
     {
-        if (Ressources>35)
+        if (Ressources > 35)
         {
-           // Joueur.J1.AjouterOr(35);
-            Ressources -= 35;
+            NetworkManager.singleton.playerPrefab.GetComponent<Joueur>().GetComponentInChildren<Joueur>().AjouterOr(35);            
+            CmdUpdateMine(35);
         }
         else
         {
-          //  Joueur.J1.AjouterOr(Ressources);
-            Ressources = 0;
-            Destroy(gameObject);
+
+            NetworkManager.singleton.playerPrefab.GetComponent<Joueur>().GetComponentInChildren<Joueur>().AjouterOr(Ressources);
+            CmdUpdateMine(0);
+            CmdDestroyMine();
         }
-        
-        
+
+
+    }
+    [Command]
+    void CmdDestroyMine()
+    {
+        Destroy(gameObject);
+    }
+
+    [Command]
+    void CmdUpdateMine(int valeur)
+    {
+        Ressources -= valeur;
     }
 }

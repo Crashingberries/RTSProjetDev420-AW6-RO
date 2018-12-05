@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
   m_LogLevel: 2
-  m_PlayerPrefab: {fileID: 1524309426908902, guid: ef10e52538ec23b4ebcd3449b06fe3f7,
+  m_PlayerPrefab: {fileID: 1524309426908902, guid: ac340a2ca59024c4ca9392dc64efa966,
     type: 2}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 0
@@ -173,14 +173,14 @@ MonoBehaviour:
   m_OnlineScene: terrain
   m_SpawnPrefabs:
   - {fileID: 1821469621697834, guid: 99642782f221ee249b7d0d8a6bc06a31, type: 2}
-  - {fileID: 1669427438954630, guid: b917205e70fa2884f92d8c0b01730e25, type: 2}
-  - {fileID: 1821272939385586, guid: c43b6e1eb2cbbc741964d1933400ad6f, type: 2}
-  - {fileID: 1561429995223300, guid: a5c3a7b85f6d30f4393f1476e7e00559, type: 2}
-  - {fileID: 1983951559192028, guid: 5c7c87fac9e4f3c4791a1da85ab27963, type: 2}
-  - {fileID: 1826152769515874, guid: 4085d6ef584d2e0419c9f6d3c785f1a5, type: 2}
-  - {fileID: 1884351914729828, guid: d729b19c67386824b87c3348cbb7ac8d, type: 2}
-  - {fileID: 1169214439299592, guid: 827509ded02f3f64d855d1455aa238f0, type: 2}
-  - {fileID: 1225260397650220, guid: 1160788bccb0cfc438ab7eb3ed3b09fd, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 1233674820223430, guid: 208a42aa3614ca047875616195e909a1, type: 2}
   - {fileID: 1466990769482380, guid: 86f6527b880c6cd489b962819283113a, type: 2}
   - {fileID: 1368082034674602, guid: e0239d6516b11094180d3b4a944a07b5, type: 2}
@@ -291,7 +291,7 @@ Camera:
   m_GameObject: {fileID: 949585426}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
