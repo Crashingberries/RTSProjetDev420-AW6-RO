@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 136969729829434002}
   m_Layer: 8
   m_Name: Quad
-  m_TagString: Ennemi
+  m_TagString: Friendly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -280,7 +280,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1669427438954630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 198.4961, y: 0.75992095, z: 388.35403}
+  m_LocalPosition: {x: 159.74268, y: 0, z: 379.5167}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4960556275245436}
@@ -588,7 +588,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &65407162172471288
 BoxCollider:
@@ -611,7 +611,7 @@ Animator:
   m_GameObject: {fileID: 1669427438954630}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e6cb1da57f12ded4b86aed40b45ae3aa, type: 3}
-  m_Controller: {fileID: 9100000, guid: af36311c9b6402644988d42676a824ea, type: 2}
+  m_Controller: {fileID: 9100000, guid: 88c3186717d817043b533b2c46f83516, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -626,7 +626,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1669427438954630}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: adc7b81383caee740b1b7a0a83422b79, type: 3}
   m_Name: 

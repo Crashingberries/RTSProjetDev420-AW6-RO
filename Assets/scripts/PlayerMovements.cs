@@ -11,6 +11,7 @@ public class PlayerMovements : MonoBehaviour {
     private Vector3 positionCible;
     private bool enMouvement;
     private Animator animator;
+    private bool fuite = false;
 
     const int CLIC_DROIT = 1;
     const int CLIC_GAUCHE = 0;
@@ -47,7 +48,7 @@ public class PlayerMovements : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.name != "Terrain" && other.tag != "Friendly")
+        if (other.name != "Terrain" && other.tag != "Friendly" && other.tag != "Batiment")
         {
             if (!enMouvement) {
                 transform.LookAt(other.transform);
@@ -64,17 +65,18 @@ public class PlayerMovements : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.name != "Terrain" && collision.collider.tag != "Friendly")
+        if (collision.collider.name != "Terrain" && collision.collider.tag != "Friendly" && collision.collider.tag != "Batiment")
         {
             transform.LookAt(collision.transform);
             animator.SetBool("Attaque", true);
             enMouvement = false;
-            //print(other.name);
+
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+        fuite = false;
         animator.SetBool("Attaque", false);
     }
 

@@ -321,7 +321,7 @@ namespace RTS
         {
             foreach (GameObject element in uniteSelectionnees)
             {
-                print(element.name);
+                //print(element.name);
                 element.GetComponent<PlayerMovements>().SetPositionCible();
             }
         }
