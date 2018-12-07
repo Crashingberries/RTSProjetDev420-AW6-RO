@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -143,8 +143,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   showGUI: 1
-  offsetX: 0
-  offsetY: 0
+  offsetX: 395
+  offsetY: 135
 --- !u!114 &835680300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,34 +165,15 @@ MonoBehaviour:
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
   m_LogLevel: 2
-  m_PlayerPrefab: {fileID: 1524309426908902, guid: ac340a2ca59024c4ca9392dc64efa966,
+  m_PlayerPrefab: {fileID: 1524309426908902, guid: ef10e52538ec23b4ebcd3449b06fe3f7,
     type: 2}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 0
   m_OfflineScene: 
   m_OnlineScene: terrain
-  m_SpawnPrefabs:
-  - {fileID: 1821469621697834, guid: 99642782f221ee249b7d0d8a6bc06a31, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 1233674820223430, guid: 208a42aa3614ca047875616195e909a1, type: 2}
-  - {fileID: 1466990769482380, guid: 86f6527b880c6cd489b962819283113a, type: 2}
-  - {fileID: 1368082034674602, guid: e0239d6516b11094180d3b4a944a07b5, type: 2}
-  - {fileID: 1195167278336694, guid: 9b5d4301e180fc444b40524a199467be, type: 2}
-  - {fileID: 1346239537740400, guid: 31cb30b354d2ad34e825a3859a1d3a5d, type: 2}
-  - {fileID: 1031525136478014, guid: f3cbc3dfa8c11ef42bf7d4a8a04fce6a, type: 2}
-  - {fileID: 1479318506779902, guid: 6a9904cb458358c4aa7c7817a3965899, type: 2}
-  - {fileID: 1734781000897834, guid: c4a20175da4e9ff43b7f6218fd9c38b4, type: 2}
-  - {fileID: 1722271878122552, guid: d227241526c74b849be6b50ef76d1378, type: 2}
-  - {fileID: 1220656327252200, guid: b6f0983436da1c94ea6e3d4d101dbcb5, type: 2}
+  m_SpawnPrefabs: []
   m_CustomConfig: 0
-  m_MaxConnections: 4
+  m_MaxConnections: 10
   m_ConnectionConfig:
     m_PacketSize: 1440
     m_FragmentSize: 500
@@ -367,7 +348,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1

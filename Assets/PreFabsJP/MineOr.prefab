@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54176122559563842}
   - component: {fileID: 136125205033553574}
   - component: {fileID: 114401577512405972}
+  - component: {fileID: 114030280972463222}
   m_Layer: 0
   m_Name: MineOr
   m_TagString: MineOr
@@ -103,6 +104,38 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &114030280972463222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1624579873694926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 205
+    i1: 100
+    i2: 117
+    i3: 45
+    i4: 237
+    i5: 141
+    i6: 157
+    i7: 148
+    i8: 74
+    i9: 59
+    i10: 228
+    i11: 162
+    i12: 72
+    i13: 126
+    i14: 64
+    i15: 3
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114401577512405972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,7 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1624579873694926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d0c97d831a3ce2498b154f1f137f08e, type: 3}
+  m_Script: {fileID: 11500000, guid: 836e4c8fcfd0c5f4ab43b69ff131b8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Ressources: 300

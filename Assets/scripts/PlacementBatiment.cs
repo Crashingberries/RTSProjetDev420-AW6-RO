@@ -22,10 +22,10 @@ public class PlacementBatiment : MonoBehaviour {
         {
 
             vecteurDefini.Set(hit.point.x, hit.collider.transform.position.y, hit.point.z);
-            batimentActuel.transform.position = vecteurDefini;
+          //  batimentActuel.transform.position = vecteurDefini;
         }
-        if (Input.GetMouseButtonDown(0)) {
-            if (EstLegal())
+        //if (Input.GetMouseButtonDown(0)) {
+            if (false/*EstLegal()*/)
             {
                 EstPlace = true;
                 GameObject test = batimentActuel.transform.Find("Quad").gameObject;
@@ -41,7 +41,7 @@ public class PlacementBatiment : MonoBehaviour {
                 }
 
             }
-        }
+       // }
     }
 
     bool EstLegal()

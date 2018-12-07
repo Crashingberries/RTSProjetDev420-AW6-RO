@@ -5,45 +5,38 @@ using UnityEngine.Networking;
 
 public class Minerai : NetworkBehaviour {
 
-    public int Ressources = 300;
-    // Use this for initialization
-    void Start() {
-
-    }
+    public int Ressources = 5000;
 
     // Update is called once per frame
-    void Update() {
+    public void Update() {
+        Debug.Log("Nb de ressources: " + Ressources);
         if (Input.GetKey(KeyCode.Q))
         {
-            Recolte();
+            Recolte(Ressources);
         }
+        
     }
-    public void Recolte()
+
+    public void Recolte(int ress)
     {
-        if (Ressources > 35)
+        Joueur j = GameObject.FindObjectOfType<Joueur>();
+        FenetreRessource jRess = GameObject.FindObjectOfType<FenetreRessource>();
+
+        Debug.Log("Minerai::Recolte --- Execution");
+        if (ress > 35)
         {
-            NetworkManager.singleton.playerPrefab.GetComponent<Joueur>().GetComponentInChildren<Joueur>().AjouterOr(35);            
-            CmdUpdateMine(35);
+            jRess.AjouterOr(35);
+            Ressources -= 35;
+            j.UpdateMine(Ressources,gameObject);
         }
         else
         {
+            Debug.Log("Minerai::Recolte ==> Phase de destruction");
+            jRess.AjouterOr(Ressources);
+            j.DetruireMine(gameObject);
 
-            NetworkManager.singleton.playerPrefab.GetComponent<Joueur>().GetComponentInChildren<Joueur>().AjouterOr(Ressources);
-            CmdUpdateMine(0);
-            CmdDestroyMine();
         }
 
 
-    }
-    [Command]
-    void CmdDestroyMine()
-    {
-        Destroy(gameObject);
-    }
-
-    [Command]
-    void CmdUpdateMine(int valeur)
-    {
-        Ressources -= valeur;
     }
 }

@@ -85,7 +85,7 @@ public class Recolte : MonoBehaviour {
         {
             try
             {
-                ressource.GetComponent<Minerai>().Recolte();
+                //ressource.GetComponent<Minerai>().Recolte();
             }
             catch
             {
