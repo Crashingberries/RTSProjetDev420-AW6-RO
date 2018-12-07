@@ -48,7 +48,7 @@ public class PlayerMovements : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.name != "Terrain" && other.tag != "Friendly" && other.tag != "Batiment")
+        if (other.name != "Terrain" && other.tag != "Friendly" && other.tag != "Batiment" && other.tag != "MineOr" && other.tag != "Arbre")
         {
             if (!enMouvement) {
                 transform.LookAt(other.transform);
@@ -65,7 +65,7 @@ public class PlayerMovements : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.name != "Terrain" && collision.collider.tag != "Friendly" && collision.collider.tag != "Batiment")
+        if (collision.collider.name != "Terrain" && collision.collider.tag != "Friendly" && collision.collider.tag != "Batiment" && collision.collider.tag != "MineOr" && collision.collider.tag != "Arbre")
         {
             transform.LookAt(collision.transform);
             animator.SetBool("Attaque", true);

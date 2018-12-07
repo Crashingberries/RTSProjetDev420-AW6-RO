@@ -600,7 +600,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 3}
+  m_Size: {x: 2, y: 1, z: 2}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!95 &95107230416296344
 Animator:
@@ -640,7 +640,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1784571873423074}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.88
   m_Height: 0
   m_Direction: 1

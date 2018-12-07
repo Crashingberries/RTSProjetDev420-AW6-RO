@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54974747156011998}
   - component: {fileID: 65874110293057348}
   - component: {fileID: 114788337539707884}
+  - component: {fileID: 65219582630815622}
   m_Layer: 9
   m_Name: Camp d'entrainement
   m_TagString: Batiment
@@ -240,7 +241,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1368082034674602}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -248,6 +249,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!65 &65219582630815622
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1368082034674602}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8565903, y: 1.3745733, z: 2.0989046}
+  m_Center: {x: 0, y: 0.6872867, z: 0}
 --- !u!65 &65874110293057348
 BoxCollider:
   m_ObjectHideFlags: 1

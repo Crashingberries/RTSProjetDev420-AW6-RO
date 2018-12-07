@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 54673650581244530}
   - component: {fileID: 65159434756519780}
   - component: {fileID: 114740983081858596}
+  - component: {fileID: 65292517627466354}
   m_Layer: 9
   m_Name: "\xC9table"
   m_TagString: Batiment
@@ -1645,7 +1646,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1220656327252200}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1665,6 +1666,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.3869243, y: 0.88360596, z: 8.894507}
   m_Center: {x: 0.26610908, y: 0.38995248, z: 0.3812378}
+--- !u!65 &65292517627466354
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1220656327252200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.386924, y: 0.883606, z: 8.894507}
+  m_Center: {x: 0.2661091, y: 0.3899525, z: 0.3812378}
 --- !u!111 &111218197593487482
 Animation:
   m_ObjectHideFlags: 1
