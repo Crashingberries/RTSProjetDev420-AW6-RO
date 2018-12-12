@@ -70,6 +70,7 @@ public class PlayerMovements : MonoBehaviour {
             transform.LookAt(collision.transform);
             animator.SetBool("Attaque", true);
             enMouvement = false;
+            //log
             Debug.Log("L'unité est entrée en collision avec une autre");
         }
     }
@@ -78,6 +79,7 @@ public class PlayerMovements : MonoBehaviour {
     {
         fuite = false;
         animator.SetBool("Attaque", false);
+        //log
         Debug.Log("Une unité à n'est plus à portée de celle-ci");
     }
 
@@ -104,6 +106,7 @@ public class PlayerMovements : MonoBehaviour {
 		if(transform.position == positionCible)
         {
 			enMouvement = false;
+            //log
             Debug.Log("L'unité est arrivée à sa destination");
         }
 

@@ -72,6 +72,7 @@ namespace RTS
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 200f, 1 << 8))
                 {
                     rectanglePositionDepart = hit.point;
+                    //log
                     Debug.Log(rectanglePositionDepart);
                 }
             }
@@ -100,6 +101,7 @@ namespace RTS
                             if (uniteActuelle.name != "Quad")
                             {
                                 uniteSelectionnees.Add(uniteActuelle);
+                                //log
                                 Debug.Log(uniteActuelle + "à été ajouté(e) dans la sélection");
                             }
                         }
@@ -233,6 +235,7 @@ namespace RTS
             {
                 return true;
             }
+            //log
             Debug.Log(estDansPolygone);
             return estDansPolygone;
         }
@@ -285,6 +288,7 @@ namespace RTS
             {
                 hautGauche = hit.point;
                 i++;
+                //log
                 Debug.Log(hautGauche);
             }
 
@@ -292,6 +296,7 @@ namespace RTS
             {
                 hautDroit = hit.point;
                 i++;
+                //log
                 Debug.Log(hautDroit);
             }
 
@@ -299,6 +304,7 @@ namespace RTS
             {
                 basGauche = hit.point;
                 i++;
+                //log
                 Debug.Log(basGauche);
             }
 
@@ -306,6 +312,7 @@ namespace RTS
             {
                 basDroit = hit.point;
                 i++;
+                //log
                 Debug.Log(basDroit);
             }
 
@@ -325,6 +332,7 @@ namespace RTS
         {
             foreach (GameObject element in uniteSelectionnees)
             {
+                //log
                 Debug.Log(element.name+"s'est mis à bouger");
                 element.GetComponent<PlayerMovements>().SetPositionCible();
             }
