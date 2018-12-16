@@ -3,15 +3,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 [DisallowMultipleComponent]
-public class PlayerMovements : MonoBehaviour {
+public class PlayerMovements : NetworkBehaviour {
     [SerializeField][Range(1, 200)]
     private float vitesse = 10;
     private Vector3 positionCible;
     private bool enMouvement;
     private Animator animator;
+    private bool fuite = false;
 
+
+    public Texture2D image;
     const int CLIC_DROIT = 1;
     const int CLIC_GAUCHE = 0;
 
@@ -25,8 +29,12 @@ public class PlayerMovements : MonoBehaviour {
 		enMouvement = false;
     }
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update() {
+        if (!hasAuthority)
+        {
+            return;
+        }
 		/*if (Input.GetMouseButton(CLIC_DROIT))
         {
 			SetPositionCible();
@@ -47,7 +55,7 @@ public class PlayerMovements : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.name != "Terrain" && other.tag != "Friendly")
+        if (other.name != "Terrain" && other.tag != gameObject.tag && other.tag != "Batiment" && other.tag != "MineOr" && other.tag != "Arbre")
         {
             if (!enMouvement) {
                 transform.LookAt(other.transform);
@@ -64,18 +72,22 @@ public class PlayerMovements : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.name != "Terrain" && collision.collider.tag != "Friendly")
+        if (collision.collider.name != "Terrain" && collision.collider.tag != gameObject.tag && collision.collider.tag != "Batiment" && collision.collider.tag != "MineOr" && collision.collider.tag != "Arbre")
         {
             transform.LookAt(collision.transform);
             animator.SetBool("Attaque", true);
             enMouvement = false;
-            //print(other.name);
+            //log
+            Debug.Log("L'unité est entrée en collision avec une autre");
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+        fuite = false;
         animator.SetBool("Attaque", false);
+        //log
+        Debug.Log("Une unité à n'est plus à portée de celle-ci");
     }
 
     public void SetPositionCible()
@@ -101,6 +113,8 @@ public class PlayerMovements : MonoBehaviour {
 		if(transform.position == positionCible)
         {
 			enMouvement = false;
+            //log
+            Debug.Log("L'unité est arrivée à sa destination");
         }
 
 		Debug.DrawLine(transform.position, positionCible, Color.red);

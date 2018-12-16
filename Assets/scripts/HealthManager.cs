@@ -12,6 +12,7 @@ public class HealthManager : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        construction=gameObject.transform.parent.parent.gameObject;
         PVcourant = (int)PvBar.maxValue;
     }
 
@@ -23,6 +24,7 @@ public class HealthManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        Debug.Log("HealthManager::Update ==> Nom du gameobject Parent:"+construction.name);
         GetComponentInChildren<Text>().text = PvBar.value + "/" + PvBar.maxValue;
         Vector3 pos = construction.transform.position;
         PvBar.transform.position = Camera.main.WorldToScreenPoint(new Vector3(pos.x+3, pos.y, pos.z+8));

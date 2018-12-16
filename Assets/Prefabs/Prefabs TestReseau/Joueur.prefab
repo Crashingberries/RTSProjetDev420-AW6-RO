@@ -52,8 +52,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a16f8f95fd32e1748b7020defbd5b71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraJ1: {fileID: 1527402342084352, guid: 781068e2e92a07b47b9d80aa95c9a9ba, type: 2}
-  cameraJ2: {fileID: 1264429532439374, guid: e497c6d1cc3268b42864fc178084418e, type: 2}
+  cameraJ1: {fileID: 1527402342084352, guid: 44bdef93e9c4e144ebde57dc189ea5c3, type: 2}
+  cameraJ2: {fileID: 1264429532439374, guid: 6062145aa57c5ee47b518192ec9a2bf9, type: 2}
+  ouvrierStart: {fileID: 1225260397650220, guid: 1160788bccb0cfc438ab7eb3ed3b09fd,
+    type: 2}
+  baseStart: {fileID: 1436600132485324, guid: 4609155ba8fcae24db805082cec20c4c, type: 2}
+  JoueurManager: {fileID: 1243832177471116, guid: 805f122d4d4c9cc4990105aec5889754,
+    type: 2}
+  BatimentTmp: {fileID: 0}
+  MatJ1: {fileID: 2100000, guid: 5a14b9d2625314c4096c9226e0870428, type: 2}
+  MatJ2: {fileID: 2100000, guid: 290ded809804acb49a077ada05f1da0b, type: 2}
   Num: 0
   Nom: 
   Couleur: blanc
@@ -74,20 +82,20 @@ MonoBehaviour:
     m_Value: 0
   m_AssetId:
     i0: 239
-    i1: 16
-    i2: 229
-    i3: 37
-    i4: 56
-    i5: 236
-    i6: 35
-    i7: 180
-    i8: 235
-    i9: 205
-    i10: 52
-    i11: 73
-    i12: 176
-    i13: 111
-    i14: 227
-    i15: 247
+    i1: 146
+    i2: 187
+    i3: 183
+    i4: 5
+    i5: 33
+    i6: 88
+    i7: 228
+    i8: 59
+    i9: 47
+    i10: 222
+    i11: 26
+    i12: 49
+    i13: 226
+    i14: 238
+    i15: 86
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0

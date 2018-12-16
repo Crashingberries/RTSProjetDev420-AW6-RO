@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class ActionsBatiment : MonoBehaviour
+
+public class ActionsBatiment : NetworkBehaviour
 {
 
     public Transform t_batiment;
     public Vector3 ptdr;
     public GameObject raliement;
     private GameObject raliement2; // COPIE de raliement
-
+    FenetreRessource jRess;
+    Joueur j;
     private double pourcentage = 0;
 
     private bool placer_ptdr;
@@ -22,6 +25,15 @@ public class ActionsBatiment : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        foreach (Joueur x in GameObject.FindObjectsOfType<Joueur>())
+        {
+            if (x.isLocalPlayer)
+            {
+                j = x;
+            }
+        }
+        Debug.Log(j.tag);
+        jRess = GameObject.FindObjectOfType<FenetreRessource>();
         t_batiment = GetComponent<Transform>();
         ptdr = new Vector3(t_batiment.position.x + 10, t_batiment.position.y, t_batiment.position.z);
         //print("ptdr " + ptdr);
@@ -30,6 +42,10 @@ public class ActionsBatiment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!hasAuthority)
+        {
+            return;
+        }
         if (placer_ptdr)
         {
             raliement2.transform.position = GetMousePosition();
@@ -116,19 +132,21 @@ public class ActionsBatiment : MonoBehaviour
     }
     public void CommanderUnit(GameObject Unit)
     {
-       /* if (Joueur.J1.Ress_bois >= 50)
-        { 
-            Joueur.J1.RetirerBois(50);
+        if (jRess.Ress_bois >= 50)
+        {
+            Debug.Log("Ressources avant le create: "+ jRess.Ress_bois);
+            jRess.RetirerBois(50);
+            Debug.Log("Ressources APRÈS le create: " + jRess.Ress_bois);
             commandes.Add(Unit);
             UpdateTextButton(Unit.name);
         }
         else
         {
-            // MessagesToPlayer.PasAssezRessources(Joueur.J1.Ress_bois >= 50, true, true);
-            if (commandes.FindAll(commandes=>commandes==Unit).Count==0) { GameObject.Find("btn_comCreate" + Unit.name).SetActive(false); }
-            
-        }*/
-        
+            MessagesToPlayer.PasAssezRessources(jRess.Ress_bois >= 50, true, true);
+            if (commandes.FindAll(commandes => commandes == Unit).Count == 0) { GameObject.Find("btn_comCreate" + Unit.name).SetActive(false); }
+
+        }
+
     }
     public void AnnulerCommande(GameObject unit)
     {   
@@ -137,12 +155,13 @@ public class ActionsBatiment : MonoBehaviour
             commandes.RemoveAt(remove);
             UpdateTextButton(unit.name);
             CacherBoutton(unit.name);
-       // Joueur.J1.AjouterBois(50);
+            jRess.AjouterBois(50);
     }
 
     public void CreerUnit(GameObject Unit)
     {
         Vector3 pos = new Vector3(t_batiment.position.x + 10, t_batiment.position.y, t_batiment.position.z);
-        GameObject f = Instantiate(Unit, pos, t_batiment.rotation);
+        Debug.Log("ACTIONBATIMENT::CreerUnit, Tag:"+j.tag);
+        j.CreerUnit(j.JoueurManager.GetComponent<PlacementBatiment>().ListeUnit.FindIndex(unite => unite == Unit),pos);
     }
 }

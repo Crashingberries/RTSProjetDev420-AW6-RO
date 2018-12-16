@@ -4,8 +4,14 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - cameraJ1: {fileID: 1527402342084352, guid: f1e1571baf492024aba8e0d7b634645c, type: 2}
-  - cameraJ2: {fileID: 1264429532439374, guid: 88220d20674e86e478ee5afc0288c132, type: 2}
+  - cameraJ1: {fileID: 1527402342084352, guid: 44bdef93e9c4e144ebde57dc189ea5c3, type: 2}
+  - cameraJ2: {fileID: 1264429532439374, guid: 6062145aa57c5ee47b518192ec9a2bf9, type: 2}
+  - ouvrierStart: {fileID: 1225260397650220, guid: 1160788bccb0cfc438ab7eb3ed3b09fd,
+      type: 2}
+  - baseStart: {fileID: 1466990769482380, guid: 86f6527b880c6cd489b962819283113a,
+      type: 2}
+  - JoueurManager: {fileID: 1243832177471116, guid: 805f122d4d4c9cc4990105aec5889754,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

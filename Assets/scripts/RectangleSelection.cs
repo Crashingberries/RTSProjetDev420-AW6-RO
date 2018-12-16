@@ -6,6 +6,7 @@ namespace RTS
 {
     public class RectangleSelection: MonoBehaviour
     {
+        Joueur j;
         //ajoute toutes les unités de la scène
         public GameObject[] toutesUnites;
 
@@ -25,6 +26,8 @@ namespace RTS
 
         [System.NonSerialized]
         public List<GameObject> uniteSelectionnees = new List<GameObject>();
+        public List<GameObject> _uniteSelectionnees { get { return uniteSelectionnees; } }
+        public MenuSetup MS;
 
         GameObject highlightCetteUnite;
 
@@ -43,13 +46,15 @@ namespace RTS
 
         void Start()
         {
+            MS = GetComponent<MenuSetup>();
             //désactive le rectangle
             rectangleSelectionTrans.gameObject.SetActive(false);
+            j = GameObject.FindObjectOfType<Joueur>();
         }
 
         void Update()
         {
-            toutesUnites= GameObject.FindGameObjectsWithTag("Friendly");
+            toutesUnites = GameObject.FindGameObjectsWithTag(j.tag+"Unit");
             SelectionnerUnites();
             HighlightUnite();
             if (Input.GetMouseButton(CLIC_DROIT))
@@ -72,6 +77,8 @@ namespace RTS
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 200f, 1 << 8))
                 {
                     rectanglePositionDepart = hit.point;
+                    //log
+                    Debug.Log(rectanglePositionDepart);
                 }
             }
 
@@ -100,7 +107,10 @@ namespace RTS
                             if (uniteActuelle.name != "Quad")
                             {
                                 uniteSelectionnees.Add(uniteActuelle);
+                                //log
+                                Debug.Log(uniteActuelle + "à été ajouté(e) dans la sélection");
                             }
+                            MS.UpdateGui = true;
                         }
                         else
                         {
@@ -130,7 +140,7 @@ namespace RTS
 
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 200f))
                 {
-                    if (hit.collider.CompareTag("Friendly"))
+                    if (hit.collider.CompareTag(j.tag+"Unit"))
                     {
                         GameObject uniteActive = hit.collider.gameObject;
                         uniteActive.GetComponent<MeshRenderer>().material = matSelection;
@@ -195,7 +205,7 @@ namespace RTS
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 200f))
             {
-                if (hit.collider.CompareTag("Friendly"))
+                if (hit.collider.CompareTag(j.tag+"Unit"))
                 {
                     GameObject objActuel = hit.collider.gameObject;
 
@@ -232,7 +242,8 @@ namespace RTS
             {
                 return true;
             }
-
+            //log
+            Debug.Log(estDansPolygone);
             return estDansPolygone;
         }
 
@@ -275,33 +286,37 @@ namespace RTS
 
             RaycastHit hit;
             int i = 0;
-            bool a = false;
-            bool b = false;
-            bool c = false;
-            bool d = false;
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(hautGauche), out hit, 200f, 1 << 8))
             {
                 hautGauche = hit.point;
                 i++;
+                //log
+                Debug.Log(hautGauche);
             }
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(hautDroit), out hit, 200f, 1 << 8))
             {
                 hautDroit = hit.point;
                 i++;
+                //log
+                Debug.Log(hautDroit);
             }
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(basGauche), out hit, 200f, 1 << 8))
             {
                 basGauche = hit.point;
                 i++;
+                //log
+                Debug.Log(basGauche);
             }
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(basDroit), out hit, 200f, 1 << 8))
             {
                 basDroit = hit.point;
                 i++;
+                //log
+                Debug.Log(basDroit);
 
             }
 
@@ -321,7 +336,8 @@ namespace RTS
         {
             foreach (GameObject element in uniteSelectionnees)
             {
-                print(element.name);
+                //log
+                Debug.Log(element.name + "s'est mis à bouger");
                 element.GetComponent<PlayerMovements>().SetPositionCible();
             }
         }

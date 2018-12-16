@@ -85,7 +85,8 @@ public class Recolte : MonoBehaviour {
         {
             try
             {
-                //ressource.GetComponent<Minerai>().Recolte();
+                StartCoroutine(Recolter());
+                ressource.GetComponent<Minerai>().Recolte(35);
             }
             catch
             {
@@ -96,7 +97,7 @@ public class Recolte : MonoBehaviour {
         {
             try
             {
-                ressource.GetComponent<Arbre>().Recolte();
+                ressource.GetComponent<Arbre>().Recolte(35);
             }
             catch
             {
@@ -114,7 +115,10 @@ public class Recolte : MonoBehaviour {
         anim.SetBool("Attaque", true);
         enRecolte = true;
     }
-
+    IEnumerator Recolter()
+    {
+        yield return new WaitForSeconds(5f);
+    }
 
 
 }

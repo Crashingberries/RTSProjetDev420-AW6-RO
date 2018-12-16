@@ -1,29 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Arbre : MonoBehaviour
+public class Arbre : NetworkBehaviour
 {
 
-    public int ressources = 100;
+    public int Ressources = 100;
     // Use this for initialization
-    private void Start()
-    {
-    }
 
-    public void Recolte()
+    public void Recolte(int ress)
     {
-        if (ressources > 35)
+        Joueur j = GameObject.FindObjectOfType<Joueur>();
+        FenetreRessource jRess = GameObject.FindObjectOfType<FenetreRessource>();
+        Debug.Log("Arbre::Recolte --- Execution");
+        if (ress > 35)
         {
-            //Joueur.J1.AjouterBois(35);
-            ressources -= 35;
+
+            jRess.AjouterBois(35);
+            Ressources -= 35;
+            j.UpdateRessource(Ressources, gameObject.GetComponent<NetworkIdentity>());
         }
         else
         {
-            //Joueur.J1.AjouterBois(ressources);
-            ressources = 0;
-            Destroy(gameObject);
+            Debug.Log("Minerai::Recolte ==> Phase de destruction");
+            jRess.AjouterOr(Ressources);
+            j.DetruireRessource(gameObject.GetComponent<NetworkIdentity>());
+
         }
+
+
     }
 }
        
